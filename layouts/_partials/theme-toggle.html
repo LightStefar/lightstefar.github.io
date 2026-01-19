@@ -1,0 +1,65 @@
+{{- $iconHeight := .iconHeight | default 20 -}}
+
+<!-- Hextra uses hx:group and [data-theme] to toggle icon visibility via CSS -->
+<div class="hx:flex hx:items-center hx:group custom-theme-wrapper" data-theme="dark">
+  <button
+    id="custom-theme-toggle"
+    class="hx:p-2 hx:rounded-full hx:transition-colors hx:hover:bg-gray-100 hx:dark:hover:bg-primary-100/5 hx:text-gray-600 hx:dark:text-gray-400"
+    type="button"
+    aria-label="Toggle Theme"
+  >
+    <div class="hx:flex hx:items-center">
+      <!-- Sun icon: Hextra's CSS hides this when [data-theme='light'] -->
+      {{- partial "utils/icon.html" (dict "name" "sun" "attributes" (printf `height=%d class="hx:group-data-[theme=dark]:hidden hx:group-data-[theme=system]:hidden"` $iconHeight)) -}}
+      
+      <!-- Moon icon: Hextra's CSS hides this when [data-theme='dark'] -->
+      {{- partial "utils/icon.html" (dict "name" "moon" "attributes" (printf `height=%d class="hx:group-data-[theme=light]:hidden hx:group-data-[theme=system]:hidden"` $iconHeight)) -}}
+    </div>
+  </button>
+</div>
+
+<script>
+(function() {
+  const defaultTheme = '{{ site.Params.theme.default | default `system`}}'
+  const themes = ["light", "dark"];
+
+  btn = document.getElementById('custom-theme-toggle');
+
+  function applyTheme(theme) {
+    theme = themes.includes(theme) ? theme : "system";
+    btn.parentElement.dataset.theme = theme;
+    localStorage.setItem("color-theme", theme);
+  }
+
+  function switchTheme(theme) {
+  // 1. Kill all transitions globally
+  const disableTransition = document.createElement('style');
+  disableTransition.innerHTML = '*, *::before, *::after { transition: none !important; }';
+  document.head.appendChild(disableTransition);
+
+  setTheme(theme);
+  applyTheme(theme);
+ // 3. Force reflow & Cleanup
+  window.getComputedStyle(disableTransition).opacity;
+  requestAnimationFrame(() => {
+  document.head.removeChild(disableTransition);
+});
+  }
+
+  const colorTheme = "color-theme" in localStorage ? localStorage.getItem("color-theme") : defaultTheme;
+  switchTheme(colorTheme);
+
+  btn.addEventListener("click", () => {
+    const current = localStorage.getItem("color-theme");
+    const nextTheme = (current === 'dark') ? 'light' : 'dark';
+    switchTheme(nextTheme);
+  })
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (localStorage.getItem("color-theme") === "system") {
+      setTheme("system");
+    }
+  });
+})();
+</script>
+

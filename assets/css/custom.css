@@ -1,0 +1,13 @@
+
+@font-face {
+  font-family: 'MyPlay';
+  src: url('/fonts/Play-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'MyPlay', sans-serif;
+}
+:root {
+  --hextra-max-footer-width:70rem;
+}
