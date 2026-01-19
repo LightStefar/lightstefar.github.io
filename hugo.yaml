@@ -47,6 +47,9 @@ params:
   displayUpdatedDate: true
   dateFormat: "January 2, 2006"
 
+  page:
+    width: wide
+
   search:
     enable: true
     type: flexsearch
@@ -55,7 +58,7 @@ params:
       # index page by: content | summary | heading | title
       index: content
       # full | forward | reverse | strict
-      tokenize: reverse
+      tokenize: full
 
   theme:
     default: dark
@@ -69,7 +72,7 @@ params:
       dark: images/logo_dark.png
       link: /
       width: 40
-      height: 20
+      height: 40
 
   footer:
     displayCopyright: true 

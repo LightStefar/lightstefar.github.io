@@ -3,7 +3,7 @@ title: Getting started
 type: docs
 weight: 1
 prev: /powerlines
-next: /powerlines/dataasset/
+next: /powerlines/actor/
 ---
 
 Quick guide to quickly get started with a plugin.

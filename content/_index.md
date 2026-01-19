@@ -1,7 +1,6 @@
 ---
 title: Products
 toc: false
-width: full
 ---
 
 {{< space 6 >}}

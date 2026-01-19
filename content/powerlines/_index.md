@@ -2,9 +2,6 @@
 linktitle: Fast Powerlines
 title: Fast Powerlines
 toc: false
-width: normal
-sidebar:
-  exclude: true
 ---
 
 {{< figure src="Powerline_loop.webp"  class="hx:w-full hx:h-auto" alt="Powerlines animation" >}}
@@ -18,6 +15,7 @@ Powerlines are split into 2 parts:
 - Data asset
 - Actor
 
+Cables are generated with the help of procedural mesh component. 
 
 {{< space 15 >}}
 
