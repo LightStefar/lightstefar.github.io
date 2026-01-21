@@ -1,0 +1,29 @@
+{{- $img := .Get "image" -}}
+{{- $docLink := .Get "doc_link" -}}
+{{- $docText := .Get "doc_text" | default "Documentation" -}}
+{{- $docIcon := .Get "doc_icon" | default "book-open" -}}
+{{- $prodLink := .Get "prod_link" -}}
+
+<div class="custom-hero-widget">
+    <div class="hx:flex">
+    {{ with .Page.Resources.GetMatch $img }}
+        <img src="{{ .RelPermalink }}" alt="Hero Image" class="hx:block hx:w-full hx:h-auto" style="display: block; margin-bottom: 0; margin-top: 0;">
+    {{ else }}
+        <img src="{{ $img | relURL }}" alt="Hero Image" class="hx:block hx:w-full hx:h-auto" style="display: block; margin-bottom: 0; margin-top: 0;">
+    {{ end }}
+    </div>
+    <div class="widget-actions hx:gap-4 hx:p-4 hx:flex hx:justify-center hx:items-center hx:bg-white hx:dark:bg-neutral-800">
+    {{ if $docLink }}
+    <a href="{{ $docLink | relURL }}" class="widget-btn doc-link">
+        {{ partial "utils/icon.html" (dict "name" $docIcon "attributes" "height=18") }}
+        <span>{{ $docText }}</span>
+    </a>
+    {{ end }}
+    {{ with $prodLink }}
+        {{ template "_shortcodes/prod-button.html" . }}
+    {{ end }}
+    </div>
+</div>
+
+
+

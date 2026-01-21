@@ -1,0 +1,95 @@
+{{- $folder := .Get "folder" -}}
+{{- $images := .Page.Resources.Match (printf "%s/*" $folder) -}}
+{{- $uniqueID := .Ordinal -}}
+
+<div class="hugo-slider-container" id="slider-{{ $uniqueID }}">
+  <div class="slider-viewport">
+    {{ range $index, $image := $images }}
+      <div class="slide {{ if eq $index 0 }}active{{ end }}">
+        <img src="{{ $image.RelPermalink }}" alt="{{ $image.Title }}">
+        
+        <!-- Accessing the custom variable 'caption' -->
+        {{ with $image.Params.caption }}
+          <div class="image-label">{{ . }}</div>
+        {{ else }}
+          <div class="image-label">{{ $image.Name }}</div>
+        {{ end }}
+        
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="slider-nav">
+    {{ range $index, $image := $images }}
+      <button class="nav-dot {{ if eq $index 0 }}active{{ end }}" 
+              onclick="goToSlide({{ $index }}, {{ $uniqueID }})"></button>
+    {{ end }}
+  </div>
+  <button class="prev" onclick="moveSlide(-1, {{ .Ordinal }})">&#10094;</button>
+  <button class="next" onclick="moveSlide(1, {{ .Ordinal }})">&#10095;</button>
+</div>
+
+
+
+<script>
+ // Global state to track indices if you have multiple sliders
+  if (typeof sliderStates === 'undefined') {
+    var sliderStates = {}; 
+  }
+
+  function updateSlider(id, newIndex) {
+    const container = document.getElementById(`slider-${id}`);
+    if (!container) return; // Guard clause
+
+    const slides = container.querySelectorAll('.slide');
+    const dots = container.querySelectorAll('.nav-dot');
+    
+    // Calculate new index with wrapping
+    const index = (newIndex + slides.length) % slides.length;
+    sliderStates[id] = index; // Update state
+
+    // Sync UI
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+
+  function moveSlide(n, id) {
+    
+    if (sliderStates[id] === undefined) {
+      const container = document.getElementById(`slider-${id}`);
+      
+      const slides = Array.from(container.querySelectorAll('.slide'));
+      sliderStates[id] = slides.findIndex(s => s.classList.contains('active'));
+    }
+    updateSlider(id, sliderStates[id] + n);
+  }
+
+  function goToSlide(index, id) {
+    updateSlider(id, index);
+  }
+
+ (function() {
+    const id = {{ .Ordinal }};
+    const container = document.getElementById(`slider-${id}`);
+    let isHovered = false;
+
+    // Pause auto-play when user mouse is over the image
+    container.addEventListener('mouseenter', () => isHovered = true);
+    container.addEventListener('mouseleave', () => isHovered = false);
+    const min = 3000;
+    const max = 7000;
+    const randomDelay = Math.floor(Math.random() * (max - min + 1)) + min;
+
+     function startAutoPlay() {
+      setInterval(() => {
+        if (!isHovered) 
+        {
+          moveSlide(1, id);
+        }
+      }, randomDelay); // Uses the value generated at load time
+    }
+
+    startAutoPlay();
+  })();
+  
+</script>

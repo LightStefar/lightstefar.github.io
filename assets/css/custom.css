@@ -1,4 +1,5 @@
 
+
 @font-face {
   font-family: 'MyPlay';
   src: url('/fonts/Play-Regular.woff2') format('woff2');
@@ -10,4 +11,202 @@ body {
 }
 :root {
   --hextra-max-footer-width:70rem;
+}
+
+.hugo-slider-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide { display: none; width: 100%; height: 100%; }
+.slide.active { display: block; }
+.slide img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Bottom Left Label */
+.image-label {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  padding: 5px 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  z-index: 5;
+}
+
+/* Bottom Center Navigation */
+.slider-nav {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-dot.active { background: white; transform: scale(1.2); }
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  /* Modern Glass Look */
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(8px); /* Blurs the image behind the button */
+  -webkit-backdrop-filter: blur(8px);
+  color: white;
+  
+  /* Smoothing the Shape */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%; /* Makes them perfect circles */
+  
+  /* Sizing */
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+  z-index: 10;
+  
+  /* Smooth interaction */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Position Adjustments */
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* Hover Effects */
+.prev:hover, .next:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1); /* Slightly grows when hovered */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Active/Click Effect */
+.prev:active, .next:active {
+  transform: translateY(-50%) scale(0.95); /* Shrinks slightly when clicked */
+}
+
+/* Default: Stacked for Mobile */
+.widget-actions {
+    flex-direction: column !important;
+}
+
+/* At Tablet/Desktop (768px+), switch to horizontal */
+@media (min-width: 768px) {
+    .widget-actions {
+        flex-direction: row !important;
+    }
+}
+
+/* Button Base Styles */
+.widget-btn {
+    display: inline-flex;     /* Keeps icon and text on the same line */
+    align-items: center;      /* Vertically centers icon and text */
+    justify-content: center;   /* Horizontally centers icon and text */
+    text-align: center;
+    line-height: 1;
+    text-decoration: none;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.doc-link {
+    border: 1px solid #d1d5db;
+    padding: 0.7rem 1rem;
+    color: #4b5563;
+    font-size: 0.875rem;
+}
+.dark .doc-link { border-color: #3f3f46; color: #ffffff; }
+.doc-link:hover { background: rgba(103, 166, 190, 0.05); }
+
+.prod-link-highlight {
+    background-color: #f59e0b; /* Amber 500 */
+    color: rgb(0, 0, 0) !important;
+    padding: 0.7rem 1.5rem; /* Larger padding */
+    font-size: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.4);
+}
+
+.prod-link-highlight:hover {
+    background-color: #d97706; /* Amber 600 */
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+.custom-hero-widget {
+    border-radius: 1.1rem; /* Equivalent to rounded-lg */
+    border-style: solid;
+    border-width: 6px;      /* Equivalent to border-8 */
+    border-color: #6969695e;  /* Equivalent to indigo-600 */
+    margin-top: 2.5rem;    /* 40px gap above */
+    margin-bottom: 2.5rem; /* 40px gap below */
+    overflow: hidden;
+    width: 70%;  
+    margin-left: auto;      /* Pushes from the left */
+    margin-right: auto;  
+}
+
+.product-grid-container {
+    display: grid;
+    /* ADJUST THIS: 350px is the 'ideal' width of one product */
+    grid-template-columns: repeat(auto-fit,350px);
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    justify-content: center;
+}
+
+/* Ensure responsiveness on small mobile screens */
+@media (max-width: 400px) {
+    .product-grid-container {
+        /* On tiny screens, allow the item to shrink below 350px */
+        grid-template-columns: 100%;
+    }
+}
+
+/* Ensure the widget within the grid doesn't stretch weirdly */
+.product-grid-container .custom-hero-widget {
+    margin: 0; /* Reset margins since the grid handles spacing */
+    width: 100%;
+    /* max-width: 350px; */
+}
+
+.hero-cover-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-cover-container img {
+    width: 100%;
+    display: block;
+    object-fit: cover; 
+    object-position: center;
 }

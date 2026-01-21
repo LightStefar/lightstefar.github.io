@@ -6,11 +6,15 @@ prev: powerlines/dataasset/
 next: connection
 ---
 
-Powerline actor in plugin's folder is a simple blueprint wrapper of C++ powerline actor. You can extend from powerline native class to create a own class with required defaults. 
-Show how to extend. 
-
+Powerline actor root component is spline component, which allows to build complex powerlines in a matter of seconds. Actor is entirely written is C++, so the performance doesn't degrade with additional spline points and gives a smooth interaction in editor. 
 By moving some variables to data asset, adds ability to quickly change the preset and decreases amount of variables in actor itself. 
 Select the required data asset and you good to go. 
+
+If cables stay in same position and you want to modify spline, most likely you have a merged static mesh active. Remove it first. 
+About small bug with unreal create/remove, save system and error.
+
+
+
 
 Variable | Default | Description 
 :--|:--|:--
@@ -35,7 +39,7 @@ Variable | Default | Description
 Allows to add a bit of randomness to pole meshes. Scale works on both, static and spline meshes. 
 
 {{< callout type="info" >}}
-Rotation *doesn't* work with spline meshes. 
+Rotation **doesn't** work with spline meshes. 
 {{< /callout >}}
 
 Variable | Default | Description 
@@ -69,3 +73,26 @@ Show cable points is a debug view of procedural mesh points.
 {{< callout type="warning" >}}
   Debug view can slow down editor responsivness, use with caution. 
 {{< /callout >}}
+
+Powerline actor in plugin's folder is a simple blueprint wrapper of a native C++ powerline.
+You can extend from powerline native class to create a own class with required defaults. 
+
+### Inherit from native powerline
+
+{{% steps %}}
+
+#### Blueprint class
+
+Right-click in content browser and select blueprint class 
+{{< figure src="InheritActor_01.png"  alt="Select blueprint class" >}}
+
+#### Native powerline actor 
+
+Type powerline in a search bar and select a powerline as shown on the picture below. Press *select* button and type a new name for powerline actor.
+{{< figure src="InheritActor_02.png"  alt="Select powerline class" >}}
+
+#### Set default values 
+
+Customize newly created class as you wish.
+
+{{% /steps %}}

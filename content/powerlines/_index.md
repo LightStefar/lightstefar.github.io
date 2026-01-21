@@ -4,10 +4,11 @@ title: Fast Powerlines
 toc: false
 ---
 
-{{< figure src="Powerline_loop.webp"  class="hx:w-full hx:h-auto" alt="Powerlines animation" >}}
+{{< hero-cover src="Powerline_loop.webp" alt="Powerlines animation" >}}
 
 Fast Powerlines is an Unreal Engine plugin for **fast** building of powerlines, fences or any "cable-like" objects. 
 
+{{< prod-button link="https://example.com" >}}
 
 ## Overview
 

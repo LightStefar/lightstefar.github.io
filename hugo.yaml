@@ -18,17 +18,21 @@ markup:
 
 menu:
   main:
-    - identifier: products
-      name: Products
+    - name: Theme Toggle
+      weight: 1
+      params:
+        type: theme-toggle
+    - identifier: plugins
+      name: Plugins
       weight: 2
     - identifier: powerlines
       name: Fast Powerlines
       url: /powerlines
-      parent: products
-    - identifier: fencetool
-      name: Ultimate Fence Tool
-      url: /fencetool
-      parent: products
+      parent: plugins
+    # - identifier: fencetool
+    #   name: Ultimate Fence Tool
+    #   url: /fencetool
+    #   parent: products
     - name: About
       pageref: /about
       weight: 3
@@ -36,12 +40,9 @@ menu:
       weight: 4
       params:
         type: search
-    - name: Theme Toggle
-      weight: 1
-      params:
-        type: theme-toggle
-
+    
 enableGitInfo: true
+enableInlineShortcodes: true
 
 params:
   displayUpdatedDate: true
