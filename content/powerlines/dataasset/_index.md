@@ -70,13 +70,13 @@ resources:
 
 ---
 
-The Powerline Data Asset serves as a centralized configuration container that stores static parameters for powerline systems. By separating this data from the actor itself, it enables efficient management, rapid prototyping, and easy sharing of settings across multiple powerline instances in your project. The asset is organized into two sections: 
+The Powerline Data Asset serves as a centralized configuration container that stores static properties for powerline systems. By separating this data from the actor itself, it enables efficient management, rapid prototyping, and easy sharing of settings across multiple powerline instances in your project. The asset is organized into two sections: 
 1. Powerline  
-2. Cable (containing cable-specific parameters).
+2. Cable (containing cable-specific properties).
 
-## Powerline reference
+## Powerline Reference
 
-Below is a complete list of all powerline related parameters.
+Below is a complete list of all powerline related properties.
 
 ### Poles
 
@@ -133,7 +133,7 @@ Position and orient the socket using the viewport manipulator or by entering pre
 
 ## Cable Reference
 
-Below is a complete list of all cable parameters.
+Below is a complete list of all cable properties.
 
 ### Materials
 
@@ -142,11 +142,11 @@ Cable materials are randomly selected and managed by the powerline actor stream.
 
 ### Wind
 
-Wind parameters are designed specifically for use with a dedicated cable material and are stored in the vertex colors of the cable mesh.
+Wind properties are designed specifically for use with a dedicated cable material and are stored in the vertex colors of the cable mesh.
 
 | Channel | Description |
 |:--|:--|
-| **R (Red)** | Wind mask – calculated from contrast, sharpness, and intensity parameters to define where wind deformation occurs. |
+| **R (Red)** | Wind mask – calculated from contrast, sharpness, and intensity properties to define where wind deformation occurs. |
 | **G (Green)** | Random time offset – a per-cable random value (0–1) added to the wind animation time to create variation. |
 | **B (Blue)** | Random strength modifier – a per-cable random value (0–1) used to interpolate between minimum and maximum wind strength values. |
 
@@ -156,7 +156,7 @@ Wind parameters are designed specifically for use with a dedicated cable materia
 **Random values in G and B channels:**  
 {{< figure src="CableRandom.png" alt="Wind random vertex colors" >}}
 
-#### Wind Mask Parameters
+#### Wind Mask Properties
 
 1. **Wind Contrast** – Amplifies the wind effect by multiplying both strength and sharpness values. Provides additional control over wind definition.  
    {{< slider folder="WindContrast" >}}
@@ -168,7 +168,7 @@ Wind parameters are designed specifically for use with a dedicated cable materia
    {{< slider folder="WindIntensity" >}}
 
 
-### Cable Parameters
+### Cable Properties
 
 #### Cable Sides
 
@@ -201,7 +201,7 @@ Controls the segment length along the cable's path, affecting both geometric smo
 
 ---
 
-#### Cable Mesh Properties
+#### Cable Properties
 
 | Variable | Default | Description |
 |:--|:--|:--|

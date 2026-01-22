@@ -68,7 +68,7 @@ An optional line trace system for automatically aligning spline points to a surf
 Adds procedural randomness to pole meshes. **Scale** affects both static and spline meshes.
 
 {{< callout type="info" >}}
-**Note:** The **Rotation** parameters do **not** affect spline meshes, only static meshes.
+**Note:** The **Rotation** properties do **not** affect spline meshes, only static meshes.
 {{< /callout >}}
 
 | Variable | Default | Description |
@@ -99,7 +99,7 @@ Toggle between local and world gravity.
 
 {{< slider folder="Gravity" >}}
 
-#### Cable Parameters
+#### Cable Properties
 
 | Variable | Default | Description |
 |:--|:--|:--|
