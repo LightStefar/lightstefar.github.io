@@ -29,10 +29,14 @@ menu:
       name: Fast Powerlines
       url: /powerlines
       parent: plugins
-    # - identifier: fencetool
-    #   name: Ultimate Fence Tool
-    #   url: /fencetool
-    #   parent: products
+    - identifier: fencetool
+      name: Ultimate Fence Tool
+      url: /fencetool
+      parent: plugins
+    - identifier: pipes
+      name: Pipe Flow
+      url: /pipes
+      parent: plugins
     - name: About
       pageref: /about
       weight: 3
@@ -49,7 +53,7 @@ params:
   dateFormat: "January 2, 2006"
 
   page:
-    width: wide
+    width: wde
 
   search:
     enable: true
@@ -69,8 +73,8 @@ params:
     displayTitle: false
     displayLogo: true
     logo:
-      path: images/logo.png
-      dark: images/logo_dark.png
+      path: images/logo.svg
+      dark: images/logo_dark.svg
       link: /
       width: 40
       height: 40

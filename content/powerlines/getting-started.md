@@ -6,46 +6,52 @@ prev: /powerlines
 next: /powerlines/actor/
 ---
 
-Quick guide to quickly get started with a plugin.
+A quick guide to get started with the Powerlines plugin.
 
 ## Installing the Plugin
 
 {{% steps %}}
 
-### Download
+####  Download
+Download the plugin from the **Fab** tab in the Epic Games Launcher.
 
-Download a plugin through Epic Games Launcher in Fab tab.
+#### Install
+Click **Install to engine** and select your installed Unreal Engine version.
 
-### Install
+#### Open Plugins Window
+Open your project, go to **Edit → Plugins**, and find the Fast Powerlines plugin window.
 
-Press **Install to engine** and select your installed engine's version. 
+{{< callout type="info" >}}
+Type `fast` in search bar.
+{{< /callout >}}
 
-### Open plugins
-
-Open up your project and head to Edit->Plugins and open plugin's window.
-
-### Enable plugin
-
-Enable plugin as shown below.
-{{< figure src="/powerlines/EnablePlugin.png"  alt="Enable plugin" >}}
+#### Enable the Plugin
+Enable the plugin by checking its box as shown below.
+{{< figure src="/powerlines/EnablePlugin.png" alt="Enable plugin" >}}
 
 {{% /steps %}}
 
-<!-- {{< space 2>}} -->
-
 ## Quickstart
 
-1. Navigate to plugin folder. 
-{{< figure src="/powerlines/Navigate.png"  alt="Navigate to plugin" >}}
+{{% steps %}}
+
+#### Navigate to the Plugin Folder
+Open the Content Browser and navigate to the Powerlines plugin folder.
+{{< figure src="/powerlines/Navigate.png" alt="Navigate to plugin" >}}
 
 {{< callout type="info" >}}
-  If you can't navigate or plugin is missing, you need to enable plugin content. 
-  Press settings button in right-top section of content browser and enable **Show Plugin Content**
-  {{< figure src="/powerlines/PluginContent.png"  alt="Show plugin folder" >}}
+If the plugin folder is not visible, ensure **Show Plugin Content** is enabled. Click the **Settings** button in the top-right corner of the Content Browser and check this option.
+{{< figure src="/powerlines/PluginContent.png" alt="Show plugin folder" >}}
 {{< /callout >}}
 
-2. Drag-and-drop **PowerlineActor** into your level. 
-{{< figure src="/powerlines/DragDrop_01.webp"  alt="Drag drop from content" >}}
-**Or** you can't type *fast* in place actors search bar and drag-and-drop from there. 
-{{< figure src="/powerlines/DragDrop_02.webp"  alt="Drag drop from place actors" >}}
+#### Add a Powerline Actor to Your Level
+*   **Method A:** Drag and drop the **PowerlineActor** from the Content Browser into your level viewport.
+  {{< figure src="/powerlines/DragDrop_01.webp" alt="Drag drop from content" >}}
+*   **Method B:** Alternatively, type "powerline" into the **Place Actors** search bar and drag the actor from there.
+  {{< figure src="/powerlines/DragDrop_02.webp" alt="Drag drop from place actors" >}}
 
+#### Edit the Spline
+
+Add and move spline points to define the path of your powerline.
+
+{{% /steps %}}

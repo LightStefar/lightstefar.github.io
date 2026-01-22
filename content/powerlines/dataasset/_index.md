@@ -170,7 +170,7 @@ Wind parameters are designed specifically for use with a dedicated cable materia
 
 ### Cable Parameters
 
-1. Cable Sides
+#### Cable Sides
 
 Controls the number of radial segments around each cable, directly affecting mesh smoothness, performance, and vertex count.
 
@@ -188,7 +188,7 @@ Controls the number of radial segments around each cable, directly affecting mes
 
 ---
 
-1. Cable Spacing
+#### Cable Spacing
 
 Controls the segment length along the cable's path, affecting both geometric smoothness and UV mapping granularity.
 
@@ -209,7 +209,7 @@ Controls the segment length along the cable's path, affecting both geometric smo
 | **Cable UV Mapping Type** | Relative | **Relative:** Maps UVs based on cable length using spacing value.<br>**Tile:** Allows independent control of texture tiling regardless of cable spacing. |
 | **Cable Tile Size** | 40 | Controls the scale of texture tiling along the cable length, in Unreal units (only affects Tile mapping type). |
 | **Cable Flip UV** | false | Swaps UV orientation between vertical (Y) and horizontal (X) axes. Default uses Y-axis (vertical) alignment, matching example textures. Useful for rotated source textures. |
-| **Cable Max Draw Distance** | 200000 | Maximum rendering distance for cable meshes. Set to 0 for infinite draw distance. <br>**Compatibility:** Works with both procedural and pre-baked static meshes. |
+| **Cable Max Draw Distance** | 200000 | Maximum rendering distance for cable meshes. Set to 0 for infinite draw distance. <br>**Note:** Works with both procedural and merged static mesh. |
 
 {{< space 1 >}}
 

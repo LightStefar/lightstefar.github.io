@@ -4,7 +4,7 @@ toc: false
 width: full
 ---
 
-{{< hero-cover src="images/Powerlines.png" alt="Home cover" >}}
+<!-- {{< hero-cover src="images/Powerlines.png" alt="Home cover" >}} -->
 {{< space 2 >}}
 
 ## Plugins   {{< icon name="tools" attributes="height=0.9em" >}}

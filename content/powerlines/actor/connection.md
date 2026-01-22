@@ -5,52 +5,71 @@ prev: powerlines/actor/
 next: optimization
 ---
 
-Connection allows to create a network of connected powerlines or connect cables to any actor with sockets or bones.  
+Connection allows you to create a network of connected powerlines or connect cables to any actor that has sockets or bones.
 
-Duplicate hack. 
+### Connection Guide
 
-### How to connect. 
-<!-- {{< figure src="NavidateData01.png" alt="Navigate from content browser" >}} -->
 {{% steps %}}
 
-#### Add New Entry 
+#### Add a New Entry
+Add a new entry to the connection array and set its **Type** to `Powerline`.
 
-Add new entry in connection array and set type to `Powerline`. 
-
-
+{{< figure src="/powerlines/actor/Connection_Entry.png" alt="Create new entry" >}}
 {{< callout >}}
-You can quickly add new entry, but right-clicking array entry and pressing *duplicate*. It shortens time to create a huge network.
+**Tip**: You can quickly add a new entry by left-clicking an arrow icon next to an existing entry and pressing **Duplicate**. This saves time when creating a large network.
+{{< figure src="/powerlines/actor/Connection_Duplicate.png" alt="Duplicate hack" >}}
 {{< /callout >}}
 
-#### Select Actor
+#### Select an Actor
+Select the target actor from the **Scene Outliner** or by clicking it in the viewport.
 
-Select target actor from scene outliner or pick actor in viewport. 
-
-#### Pole Indexes
-
-Set source and target index of spline points. X is a source, Y is a target pole. 
+#### Set Pole Indexes
+Define the source and target spline points using the **Pole Indexes** parameter. **X** is the source pole index, and **Y** is the target pole index.
 
 {{< callout type="info" >}}
-If you don't know the spline point index, you can set `Show text type` to Scaled value. It designed specifically for this.
+If you are unsure of a spline point's index, set the **Show Text Type** parameter to **Scaled**. This visualizes the index numbers on each pole.
 {{< /callout >}}
 
-#### Optional
-Change cable connection type from manual to probability. 
+{{< figure src="/powerlines/actor/Connection_01.webp" alt="Connect powerlines" >}}
+
+#### Optional: Configure Cables
+For **Powerline** type connections, you can change the **Cable Connection Type** from `All` to `Probability` to control cable density, or to `Manual` for precise control.
 
 {{% /steps %}}
 
-
-
-
-### Connection parameters 
+### Connection Parameters
 
 #### Show Text Type
-Editor-only variable which vizualizes spline point or pole number. 
-1. **None:** Disables debug text helper.
-2. **Scaled:** Scale the size of text to pole Z height and rotates as pole.
-3. **Static:** Static size of text(100 units) and removes spline and pole rotations.
-   
-   
+An editor-only visualization that displays spline point or pole index numbers.
+*   **None:** Disables the debug text.
+*   **Scaled:** Text size scales with the pole's height and rotates with the pole.
+*   **Static:** Text remains a fixed size (100 units) and does not rotate with the spline or pole.
+
+#### Core Parameters
 | Variable | Default | Description |
 |:--|:--|:--|
-| **Show Text Type** | None | **None:** Disables debug text helper.<br>**Scaled:** Scale the size of text to pole Z height and rotates as pole.<br>**Static:** Static size of text(100 units) and removes spline and pole rotations|
+| **Type** | None | Defines the connection target.<br> • **None:** Disables this connection.<br> • **Powerline:** Connects to another powerline actor.<br> • **Actor:** Connects to any actor in the scene.|
+| **Actor** | None | The target actor to connect to. |
+| **Pole Indexes** | (0, 0) | Specifies which poles (spline points) to use for the connection. **X** is the source index on *this* actor, **Y** is the target index on the connected actor.<br> **Note:** The Y index is ignored when **Type** is set to **Actor**.|
+
+#### Cable Actor Connection Type *(Actor Type Only)*
+Chooses how to define connection points on the target actor.
+*   **Points:** Uses the **Actor Connected Points** array.
+*   **Bones:** Uses the **Actor Connected Bones** array (ideal for actors with many sockets).
+
+| Variable | Description |
+|:--|:--|
+| **Actor Connected Points** | ***(Points type only)*** An array specifying connection points. Each entry defines a pair: **X** (source index on this actor) and **Y** (target point index on the connected actor). |
+| **Actor Connected Bones** | ***(Bones type only)*** An array specifying connection bones/sockets. Each entry defines a pair: **X** (source index on this actor) and a target **Bone Name** on the connected actor. |
+
+#### Cable Connection Type *(Powerline Type Only)*
+Controls how cables are generated between connected powerline poles.
+*   **All:** Creates a cable for every possible connection between poles.
+*   **Random:** Creates cables randomly based on a probability weight.
+*   **Manual:** Lets you explicitly specify which connections to create.
+
+| Variable | Default | Description |
+|:--|:--|:--|
+| **Cable Probability** | 50 | ***(Random type only)*** The probability weight (0-100) for creating a cable between a pair of poles. |
+| **Cable Connected Points** | Empty | ***(Manual type only)*** An array where you explicitly list the pole index pairs (X=source, Y=target) to connect with cables.<br> **Note:** Switching from **All** or **Random** will auto-populate this array with the corresponding indexes. |
+
