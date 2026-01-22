@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Getting Started
 type: docs
 weight: 1
 prev: /powerlines
