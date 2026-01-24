@@ -1,12 +1,8 @@
-
 {{- $link := "" -}}
-{{- if reflect.IsMap . -}}
+{{- if .IsNamedParams -}}
     {{- $link = .Get "link" -}}
 {{- else -}}
-    {{- $link = . -}}
+    {{- $link = .Get 0 -}}
 {{- end -}}
 
-<a href="{{ $link }}" target="_blank" rel="noopener" class="widget-btn prod-link-highlight">
-    {{ partial "utils/icon.html" (dict "name" "external-link" "attributes" "height=20") }}
-    <span>Get on Fab</span>
-</a>
+{{- partial "prod-button.html" $link -}}
