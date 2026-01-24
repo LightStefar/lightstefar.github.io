@@ -37,6 +37,8 @@ For **Powerline** type connections, you can change the **Cable Connection Type**
 
 {{% /steps %}}
 
+---
+
 ### Connection Properties
 
 #### Show Text Type
@@ -44,6 +46,7 @@ An editor-only visualization that displays spline point or pole index numbers.
 *   **None:** Disables the debug text.
 *   **Scaled:** Text size scales with the pole's height and rotates with the pole.
 *   **Static:** Text remains a fixed size (100 units) and does not rotate with the spline or pole.
+---
 
 #### Core Properties
 | Variable | Default | Description |
@@ -52,16 +55,21 @@ An editor-only visualization that displays spline point or pole index numbers.
 | **Actor** | None | The target actor to connect to. |
 | **Pole Indexes** | (0, 0) | Specifies which poles (spline points) to use for the connection. <br>**X** is the source index on *this* actor, **Y** is the target index on the connected actor.<br> **Note:** The Y index is ignored when **Type** is set to **Actor**.|
 
+---
+
 #### Cable Actor Connection Type 
 *Actor Type Only*<br>
 Chooses how to define connection points on the target actor.
 *   **Points:** Uses the **Actor Connected Points** array.
 *   **Bones:** Uses the **Actor Connected Bones** array (ideal for actors with many sockets).
+  
 
 | Variable | Description |
 |:--|:--|
 | **Actor Connected Points** | **Points type only**<br> An array specifying connection points. Each entry defines a pair: **X** (source index on this actor) and **Y** (target point index on the connected actor). |
 | **Actor Connected Bones** | **Bones type only**<br> An array specifying connection bones/sockets. Each entry defines a pair: **X** (source index on this actor) and a target **Bone Name** on the connected actor. |
+
+---
 
 #### Cable Connection Type 
 *Powerline Type Only*<br>

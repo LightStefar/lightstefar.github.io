@@ -53,6 +53,8 @@ Simply select the required data asset, and you are ready to build.
 | **Stream** | Auto-generated | The random seed that drives all procedural randomness (pole variation, cable gravity, etc.) within the actor. |
 | **Closed Loop** | false | **Spline Component property.** When enabled, connects the last spline point to the first, forming a continuous loop. Requires at least 3 points. |
 
+---
+
 ## Tracing
 
 An optional line trace system for automatically aligning spline points to a surface.
@@ -62,6 +64,8 @@ An optional line trace system for automatically aligning spline points to a surf
 | **Type** | None | **None:** Disables surface alignment.<br> **Trace:** Performs a line trace from each spline point (along the Z-axis) and aligns to the first blocking hit.<br> **Trace Debug:** Same as Trace, but draws debug lines for visualization. |
 | **Distance Up Down** | (250, 500) | The maximum trace distance in units. **X** = upward direction, **Y** = downward direction. |
 | **Offset** | 0 | Offsets the aligned spline point along the hit surface's normal by this distance. |
+
+---
 
 ## Poles
 
@@ -78,6 +82,8 @@ Adds procedural randomness to pole meshes. **Scale** affects both static and spl
 | **Rotation Roll Min Max** | (0, 0) | Applies a random **Roll** rotation (around X) to each pole within the specified range. |
 | **Scale Min Max** | (1, 1) | Randomly scales each pole mesh within the specified range (clamped to prevent errors). |
 
+---
+
 ## Cables
 
 The plugin's core feature generates realistic cables using different physical simulation modes.
@@ -88,16 +94,19 @@ Selects the mathematical model used to calculate the cable's curve.
 1.  **Parabolic:** An approximation that assumes the cable load is *uniformly distributed along the horizontal span* between poles. This is the **fastest** calculation method and is fine-tuned for the plugin's default data asset.
 2.  **Catenary Tension:** Calculates a curve based on the cable's internal tension force. This offers more precise physical control than the Parabolic mode.
 3.  **Catenary Slack:** Calculates a curve based on the physical *length* (slack) of the cable being greater than the straight-line distance between poles. Ideal for simulating ropes or long, drooping powerlines.
+---
 
 #### World Gravity
 Toggle between local and world gravity. 
 1. **Local:** Uses the *Actor* Z axis. The cable sag direction rotates with the actor.
 2. **World:** Uses the *World* Z axis, independent of the actor's rotation.
 {{< callout type="info" >}}
-**Note:** The magnitude of gravity for both modes is scaled by `Global Gravity Z ` variable in `World Settings`.
+**Note:** The magnitude of gravity for both modes is scaled by `Global Gravity Z` variable in `World Settings`.
 {{< /callout >}}
 
 {{< slider folder="Gravity" >}}
+
+---
 
 #### Cable Properties
 
@@ -125,6 +134,8 @@ Below are visual examples of applying an offset.
 
 {{< slider folder="CopyLoop" >}}
 
+---
+
 #### Show Cable Points
 Enables a debug visualization of the cable points.
 {{< callout type="warning" >}}
@@ -132,6 +143,8 @@ This debug view can significantly impact editor performance. Use it cautiously.
 {{< /callout >}}
 
 {{< figure src="DebugPoints.png" alt="Cable points debug view" >}}
+
+---
 
 ## Custom Powerline Actor
 

@@ -87,6 +87,7 @@ The Pole Array defines the library of static meshes which are used as support me
 The powerline actor uses a random stream to select meshes based on these weights, weight value in range of `0-100` that determines its likelihood of being chosen. A value of 0 completely excludes the mesh from selection. 
 <br>You can add any number of mesh entries.
 
+---
 
 ### Sockets
 
@@ -117,6 +118,8 @@ Position and orient the socket using the viewport manipulator or by entering pre
 
 {{% /steps %}}
 
+---
+
 ### Powerline Properties
 
 | Variable | Default | Description |
@@ -129,7 +132,7 @@ Position and orient the socket using the viewport manipulator or by entering pre
 | **Generate Overlaps** | false | Enables overlap events for pole meshes when set to `true`. |
 | **Cast Shadows** | true | Controls whether poles **and** cables cast dynamic shadows. |
 
-{{< space 2 >}}
+---
 
 ## Cable Reference
 
@@ -139,6 +142,8 @@ Below is a complete list of all cable properties.
 
 Cable materials are randomly selected and managed by the powerline actor stream. Each unique material creates an additional mesh section in the procedural cable mesh, resulting in an extra draw call. This feature is particularly useful for default powerlines to create randomized wind effects across cables. A single material can also be used without issue.
 {{< figure src="CableMaterials.png" alt="Cable materials array" >}}
+
+---
 
 ### Wind
 
@@ -156,6 +161,8 @@ Wind properties are designed specifically for use with a dedicated cable materia
 **Random values in G and B channels:**  
 {{< figure src="CableRandom.png" alt="Wind random vertex colors" >}}
 
+---
+
 #### Wind Mask Properties
 
 1. **Wind Contrast** – Amplifies the wind effect by multiplying both strength and sharpness values. Provides additional control over wind definition.  
@@ -167,6 +174,7 @@ Wind properties are designed specifically for use with a dedicated cable materia
 3. **Wind Intensity** – Global multiplier for the final wind effect. Combines the data asset intensity with the powerline actor's global wind intensity setting.  
    {{< slider folder="WindIntensity" >}}
 
+---
 
 ### Cable Properties
 
@@ -201,8 +209,6 @@ Controls the segment length along the cable's path, affecting both geometric smo
 
 ---
 
-#### Cable Properties
-
 | Variable | Default | Description |
 |:--|:--|:--|
 | **Cable Radius** | 3.0 | Defines the thickness of the cable in Unreal units. |
@@ -211,7 +217,7 @@ Controls the segment length along the cable's path, affecting both geometric smo
 | **Cable Flip UV** | false | Swaps UV orientation between vertical (Y) and horizontal (X) axes. Default uses Y-axis (vertical) alignment, matching example textures. Useful for rotated source textures. |
 | **Cable Max Draw Distance** | 200000 | Maximum rendering distance for cable meshes. Set to 0 for infinite draw distance. <br>**Note:** Works with both procedural and merged static mesh. |
 
-{{< space 1 >}}
+---
 
 ## Custom Data Asset
 

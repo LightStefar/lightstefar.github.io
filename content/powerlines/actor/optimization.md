@@ -18,6 +18,8 @@ Procedurally generated cables have runtime costs. Baking them into a static mesh
 
 To mitigate this, we can bake all cables into a static mesh.  
 
+---
+
 ### Reference
 
 | Feature | Description | Details / Notes |
@@ -27,6 +29,8 @@ To mitigate this, we can bake all cables into a static mesh.
 | **Remove Static Cables** | **Permanently deletes** the baked static mesh asset from disk | **Destructive action** – cannot be undone via **Edit > Undo**. Use with caution.  |
 | **Path Name** | A configurable variable to set the default save folder for baked static meshes. | Default location: `/Game/Meshes/`. Example: `/Game/Meshes/Cables/`. |
 | **Merged Cable Mesh** | A private, read-only variable holding a reference to the generated static mesh. | Allows inspection via double-click; note that the mesh may appear with an unusual rotation. |
+
+---
 
 
 {{< callout type="warning" >}}
