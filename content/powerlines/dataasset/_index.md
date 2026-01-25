@@ -122,12 +122,19 @@ Position and orient the socket using the viewport manipulator or by entering pre
 
 ### Powerline Properties
 
+ **Mesh Type** 
+ * **Static Mesh:** Places a standard static mesh at each spline point.
+ * **Spline Mesh:** Deforms the mesh at a spline point using start and end tangents. 
+ * **ISM:** Places an instanced static mesh component at each spline point. Same as HISM, could be usefull with `Nanite` meshes.
+ * **HISM:** Places an hierarchical instanced static mesh component at each spline point. <br>This is a good way to **optimize** draw calls when pole mesh variation is low.
+
 | Variable | Default | Description |
 |:--|:--|:--|
-| **Mesh Type** | Static Mesh | **Static Mesh:** Places a standard static mesh at each spline point.<br>**Spline Mesh:** Deforms the mesh at a spline point using start and end tangents. Usefull for cable holders or similar setups.|
-| **Spline Mesh Axis** | X | **Spline Mesh only.** Defines which local mesh axis aligns with the spline direction. |
-| **Base Pole Yaw** | 0° | Optional global rotation applied to all poles around the vertical (Z) axis. Useful for correcting imported meshes that are not oriented to the desired world alignment. |
-| **Pole Max Draw Distance** | 350000 | Maximum render distance for pole meshes. Set to `0` for infinite draw distance. |
+| **Spline Mesh Axis** | X | **Spline Mesh only.** <br> Defines which local mesh axis aligns with the spline direction. |
+| **Cull Distance Start End** | 0,0 | **ISM and HISM only.**<br> Maximum cull(render) distances for an instanced pole mesh. X = start, Y = end. |
+| **Base Pole Yaw** | 0° | Global rotation applied to all poles around the vertical (Z) axis. <br> Useful for correcting imported meshes that are not oriented to the desired world alignment. |
+| **Pole Materials** | Empty | An array of materials to apply to the pole meshes. Each material's slot name must match a static mesh material slot. |
+| **Pole Max Draw Distance** | 0 | Maximum render distance for pole meshes. Set to `0` for infinite draw distance. |
 | **Pole Collision Profile** | BlockAll | Physics collision profile assigned to pole meshes. |
 | **Generate Overlaps** | false | Enables overlap events for pole meshes when set to `true`. |
 | **Cast Shadows** | true | Controls whether poles **and** cables cast dynamic shadows. |
@@ -165,13 +172,13 @@ Wind properties are designed specifically for use with a dedicated cable materia
 
 #### Wind Mask Properties
 
-1. **Wind Contrast** – Amplifies the wind effect by multiplying both strength and sharpness values. Provides additional control over wind definition.  
+ **Wind Contrast** – Amplifies the wind effect by multiplying both strength and sharpness values. Provides additional control over wind definition.  
    {{< slider folder="WindContrast" >}}
 
-2. **Wind Sharpness** – Controls the falloff gradient of the wind effect from cable endpoints toward the center. Higher values create a more abrupt transition.  
+ **Wind Sharpness** – Controls the falloff gradient of the wind effect from cable endpoints toward the center. Higher values create a more abrupt transition.  
    {{< slider folder="WindSharpness" >}}
 
-3. **Wind Intensity** – Global multiplier for the final wind effect. Combines the data asset intensity with the powerline actor's global wind intensity setting.  
+ **Wind Intensity** – Global multiplier for the final wind effect. Combines the data asset intensity with the powerline actor's global wind intensity setting.  
    {{< slider folder="WindIntensity" >}}
 
 ---
@@ -215,7 +222,7 @@ Controls the segment length along the cable's path, affecting both geometric smo
 | **Cable UV Mapping Type** | Relative | **Relative:** Maps UVs based on cable length using spacing value.<br>**Tile:** Allows independent control of texture tiling regardless of cable spacing. |
 | **Cable Tile Size** | 40 | Controls the scale of texture tiling along the cable length, in Unreal units (only affects Tile mapping type). |
 | **Cable Flip UV** | false | Swaps UV orientation between vertical (Y) and horizontal (X) axes. Default uses Y-axis (vertical) alignment, matching example textures. Useful for rotated source textures. |
-| **Cable Max Draw Distance** | 200000 | Maximum rendering distance for cable meshes. Set to 0 for infinite draw distance. <br>**Note:** Works with both procedural and merged static mesh. |
+| **Cable Max Draw Distance** | 0 | Maximum rendering distance for cable meshes. Set to 0 for infinite draw distance. <br>**Note:** Works with both procedural and merged static mesh. |
 
 ---
 

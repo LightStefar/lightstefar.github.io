@@ -91,15 +91,15 @@ The plugin's core feature generates realistic cables using different physical si
 #### Cable Type
 Selects the mathematical model used to calculate the cable's curve.
 
-1.  **Parabolic:** An approximation that assumes the cable load is *uniformly distributed along the horizontal span* between poles. This is the **fastest** calculation method and is fine-tuned for the plugin's default data asset.
-2.  **Catenary Tension:** Calculates a curve based on the cable's internal tension force. This offers more precise physical control than the Parabolic mode.
-3.  **Catenary Slack:** Calculates a curve based on the physical *length* (slack) of the cable being greater than the straight-line distance between poles. Ideal for simulating ropes or long, drooping powerlines.
+*  **Parabolic:** An approximation that assumes the cable load is *uniformly distributed along the horizontal span* between poles. This is the **fastest** calculation method and is fine-tuned for the plugin's default data asset.
+* **Catenary Tension:** Calculates a curve based on the cable's internal tension force. This offers more precise physical control than the Parabolic mode.
+*  **Catenary Slack:** Calculates a curve based on the physical *length* (slack) of the cable being greater than the straight-line distance between poles. Ideal for simulating ropes or long, drooping powerlines.
 ---
 
 #### World Gravity
 Toggle between local and world gravity. 
-1. **Local:** Uses the *Actor* Z axis. The cable sag direction rotates with the actor.
-2. **World:** Uses the *World* Z axis, independent of the actor's rotation.
+* **Local:** Uses the *Actor* Z axis. The cable sag direction rotates with the actor.
+* **World:** Uses the *World* Z axis, independent of the actor's rotation.
 {{< callout type="info" >}}
 **Note:** The magnitude of gravity for both modes is scaled by `Global Gravity Z` variable in `World Settings`.
 {{< /callout >}}
