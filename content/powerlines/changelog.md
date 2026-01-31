@@ -5,6 +5,23 @@ weight: 10
 prev: /powerlines
 ---
 
+
+## Version 1.2
+
+### **Added**
+*   Custom billboard icon (editor-only).
+*   A default Data Asset for the native Powerline class.
+*   A `Mobility` setting to the Data Asset, which applies to all meshes to meet Unreal Engine's requirement for a root component.
+*   Material preset selection properties for pole meshes.
+
+### **Changed**
+*   Removed the `abstract` UCLASS specifier from the powerline class.
+*   Removed the Blueprint Actor wrapper; Powerline functionality is now native-only.
+*   Updated the overview level, replacing Blueprint-based powerline actors with native C++ instances.
+*   Upgraded from simple material assignments to a **Material Preset** system. This allows switching between various visual styles directly from the Data Asset in seconds.
+
+---
+
 ## Version 1.1
 
 ### **Added**
@@ -19,6 +36,8 @@ prev: /powerlines
 
 ### **Fixed**
  *   Fixed an issue with text location in the scaled text type.
+
+---
 
 ## Version 1.0
 

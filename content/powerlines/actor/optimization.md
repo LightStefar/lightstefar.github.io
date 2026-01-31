@@ -7,7 +7,7 @@ next: powerlines/dataasset/
 
 This is an editor-only optimization that generates a static mesh in a specified folder to improve runtime performance.  
 {{< callout type="info" >}}
-If your cables remain *static* and do not update when you modify the spline, you likely have a merged static mesh active. Remove it first to regain editability.
+If cables remain *static* and do not update when you modify the spline, you likely have a merged static mesh active. Remove it first to regain editability.
 {{< /callout >}}
 
 ### Why bake to a static mesh?  

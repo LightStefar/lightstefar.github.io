@@ -17,13 +17,13 @@ width: full
     doc_icon="book-open" 
     prod_link="https://fab.com/s/245d9e48759f"
 >}}
-<!--   {{< widget-product
-    image="images/Powerlines.png"
-    doc_link="fencetool" 
+  {{< widget-product
+    image="images/Pipes.png"
+    doc_link="pipes" 
     doc_text="Documentation"
     doc_icon="book-open" 
     prod_link="https://example.com"
->}} -->
+>}}
 
 {{< /product-grid >}}
 

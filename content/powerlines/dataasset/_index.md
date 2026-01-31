@@ -2,7 +2,7 @@
 title: Data Asset
 type: docs
 weight: 3
-prev: getting-started
+prev: powerlines/actor/optimization
 next: changelog
 
 resources:
@@ -133,7 +133,7 @@ Position and orient the socket using the viewport manipulator or by entering pre
 | **Spline Mesh Axis** | X | **Spline Mesh only.** <br> Defines which local mesh axis aligns with the spline direction. |
 | **Cull Distance Start End** | 0,0 | **ISM and HISM only.**<br> Maximum cull(render) distances for an instanced pole mesh. X = start, Y = end. |
 | **Base Pole Yaw** | 0° | Global rotation applied to all poles around the vertical (Z) axis. <br> Useful for correcting imported meshes that are not oriented to the desired world alignment. |
-| **Pole Materials** | Empty | An array of materials to apply to the pole meshes. Each material's slot name must match a static mesh material slot. |
+| **Pole Material Presets** | Empty | An array of material presets. Each preset is itself an array of materials to apply to the pole meshes.<br> • Each material's slot name must match a static mesh material slot.<br>• This system allows switching between different materials (presets), each of which can configure one or more material slots on the mesh. |
 | **Pole Max Draw Distance** | 0 | Maximum render distance for pole meshes. Set to `0` for infinite draw distance. |
 | **Pole Collision Profile** | BlockAll | Physics collision profile assigned to pole meshes. |
 | **Generate Overlaps** | false | Enables overlap events for pole meshes when set to `true`. |

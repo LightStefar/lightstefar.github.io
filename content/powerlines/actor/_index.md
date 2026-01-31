@@ -2,7 +2,7 @@
 title: Actor
 type: docs
 weight: 2
-prev: powerlines/dataasset/
+prev: powerlines/getting-started
 next: connection
 
 resources:
@@ -52,6 +52,9 @@ Simply select the required data asset, and you are ready to build.
 | **Data Asset** | Powerline Default | The primary Data Asset containing pole meshes, materials, and other static configuration. |
 | **Stream** | Auto-generated | The random seed that drives all procedural randomness (pole variation, cable gravity, etc.) within the actor. |
 | **Closed Loop** | false | **Spline Component property.** When enabled, connects the last spline point to the first, forming a continuous loop. Requires at least 3 points. |
+| **Material Selection Type** | None | Determines how material presets are selected from the data asset.<br>• **None:** Disables material selection and application to the mesh.<br>• **Random:** Randomly selects a preset from the data asset and stores the index in the `PoleMaterialIndex` variable.<br>• **Manual:** Allows direct selection of a preset by index. |
+| **Pole Preset Index** | -1 | The index of the material preset applied to pole meshes. This is a cyclical index (any integer is valid).<br>A value less than 0 disables material selection and application. |
+
 
 ---
 
@@ -148,7 +151,7 @@ This debug view can significantly impact editor performance. Use it cautiously.
 
 ## Custom Powerline Actor
 
-The Powerline Actor included in the plugin is a simple Blueprint wrapper around the native C++ class. You can create your own custom actor by extending this native class to set your preferred default values.
+You can create your own custom actor by extending native powerline class to set your preferred default values and data asset.
 
 To create a custom powerline actor, follow these steps:
 

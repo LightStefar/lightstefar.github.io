@@ -42,7 +42,10 @@ For **Powerline** type connections, you can change the **Cable Connection Type**
 ### Connection Properties
 
 #### Show Text Type
-An editor-only visualization that displays spline point or pole index numbers.
+An editor-only visualization that displays spline point or pole index numbers. 
+{{< callout type="info" >}}
+Text components are marked as editor-only and stripped from shipping builds irrespective of their level placement.
+{{< /callout >}}
 *   **None:** Disables the debug text.
 *   **Scaled:** Text size scales with the pole's height and rotates with the pole.
 *   **Static:** Text remains a fixed size (100 units) and does not rotate with the spline or pole.

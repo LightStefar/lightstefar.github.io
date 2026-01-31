@@ -34,7 +34,7 @@ menu:
       url: /fencetool
       parent: plugins
     - identifier: pipes
-      name: Pipe Flow
+      name: Pipe Builder
       url: /pipes
       parent: plugins
     - name: About

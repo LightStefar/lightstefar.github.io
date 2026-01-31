@@ -45,9 +45,8 @@ If the plugin folder is not visible, ensure **Show Plugin Content** is enabled. 
 {{< /callout >}}
 
 #### Add a Powerline Actor to Your Level
-*   **Method A:** Drag and drop the **PowerlineActor** from the Content Browser into your level viewport.
-  {{< figure src="/powerlines/DragDrop_01.webp" alt="Drag drop from content" >}}
-*   **Method B:** Alternatively, type "powerline" into the **Place Actors** search bar and drag the actor from there.
+
+Type `powerline` into the **Place Actors** search bar and drag the actor from there into level.
   {{< figure src="/powerlines/DragDrop_02.webp" alt="Drag drop from place actors" >}}
 
 #### Edit the Spline
