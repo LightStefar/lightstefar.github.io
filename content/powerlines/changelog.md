@@ -5,6 +5,15 @@ weight: 10
 prev: /powerlines
 ---
 
+## Version 1.21
+
+### **Changed**
+ *   Changed plugin icon.
+
+### **Fixed**
+ *   Fixed material presets crash.  
+
+---
 
 ## Version 1.2
 
