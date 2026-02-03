@@ -53,4 +53,13 @@ Type `powerline` into the **Place Actors** search bar and drag the actor from th
 
 Add and move spline points to define the path of your powerline.
 
+#### Change Data Asset
+
+Click the `Data` Asset dropdown button and select a different preset. 
+{{< callout type="info" >}}
+If data assets are not visible, ensure **Plugin Content** is enabled. Click the **Settings** button on the center-right side of the window and check this option.
+{{< figure src="/powerlines/PluginContent_Data.png" alt="Show plugin folder" >}}
+{{< /callout >}}
+
+
 {{% /steps %}}
