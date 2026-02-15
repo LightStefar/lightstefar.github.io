@@ -4,8 +4,8 @@
 {{- $docIcon := .Get "doc_icon" | default "book-open" -}}
 {{- $prodLink := .Get "prod_link" -}}
 
-<div class="custom-hero-widget">
-    <div class="hx:flex">
+<div class="hero-widget">
+    <div class="hero-image">
     {{ with .Page.Resources.GetMatch $img }}
         <img src="{{ .RelPermalink }}" alt="Hero Image" class="hx:block hx:w-full hx:h-auto" style="display: block; margin-bottom: 0; margin-top: 0;">
     {{ else }}

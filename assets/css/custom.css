@@ -1,14 +1,15 @@
 
-
 @font-face {
   font-family: 'MyPlay';
   src: url('/fonts/Play-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
+
 body {
   font-family: 'MyPlay', sans-serif;
 }
+
 :root {
   --hextra-max-footer-width:70rem;
 }
@@ -120,18 +121,6 @@ body {
   transform: translateY(-50%) scale(0.95); /* Shrinks slightly when clicked */
 }
 
-/* Default: Stacked for Mobile */
-.widget-actions {
-    flex-direction: column !important;
-}
-
-/* At Tablet/Desktop (768px+), switch to horizontal */
-@media (min-width: 768px) {
-    .widget-actions {
-        flex-direction: row !important;
-    }
-}
-
 /* Button Base Styles */
 .widget-btn {
     display: inline-flex;     /* Keeps icon and text on the same line */
@@ -168,56 +157,35 @@ body {
     transform: scale(1.05); /* Slight grow effect */
 }
 
-.custom-hero-widget {
-    border-radius: 1.1rem; /* Equivalent to rounded-lg */
-    border-style: solid;
-    border-width: 6px;      /* Equivalent to border-8 */
-    border-color: #6969695e;  /* Equivalent to indigo-600 */
-    margin-top: 2.5rem;    /* 40px gap above */
-    margin-bottom: 2.5rem; /* 40px gap below */
-    overflow: hidden;
-    width: 70%;  
-    margin-left: auto;      /* Pushes from the left */
-    margin-right: auto;  
-}
-
 .product-grid-container {
     display: grid;
-    /* ADJUST THIS: 350px is the 'ideal' width of one product */
-    grid-template-columns: repeat(auto-fit,350px);
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
+    grid-template-columns: repeat(auto-fit, 460px) ;
+    gap: 2rem; 
+    margin: 4rem auto;
+    padding: 0;  
     justify-content: center;
 }
 
-/* Ensure responsiveness on small mobile screens */
-@media (max-width: 400px) {
-    .product-grid-container {
-        /* On tiny screens, allow the item to shrink below 350px */
-        grid-template-columns: 100%;
-    }
-}
-
-/* Ensure the widget within the grid doesn't stretch weirdly */
-.product-grid-container .custom-hero-widget {
-    margin: 0; /* Reset margins since the grid handles spacing */
+.hero-widget {
     width: 100%;
-    /* max-width: 350px; */
-}
-
-.hero-cover-container {
-    width: 100%;
-    position: relative;
+    border-radius: 1rem;
+    border: 6px solid #6969695e;
     overflow: hidden;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 0;
 }
 
-.hero-cover-container img {
+.hero-image {
     width: 100%;
     display: block;
-    object-fit: cover; 
-    object-position: center;
+    object-fit: cover;
+}
+
+.widget-actions {
+    flex-direction: column !important;
+}
+
+@media (min-width: 768px) {
+    .widget-actions {
+        flex-direction: row !important;
+    }
 }
