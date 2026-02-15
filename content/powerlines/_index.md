@@ -23,11 +23,6 @@ The plugin's structure is divided into two core parts:
 
 This separation allows for efficient workflow: artists and designers can configure assets and presets in the Data Asset, while level builders can rapidly place and connect Powerline Actors using those shared settings. Together with the **Connection** system for networking and **Optimization** tools like mesh baking, they form a complete, performant solution for creating believable power infrastructure.
 
-<!-- {{< callout >}}
-**Supported Target Platforms**<br>
-Windows and Linux are officially supported target platforms. The plugin has not been tested on other systems, but it should compile and function on any platform that supports the procedural mesh component. 
-{{< /callout >}}
-{{< space 2 >}} -->
 --- 
 
 {{< cards >}}

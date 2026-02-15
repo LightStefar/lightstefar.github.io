@@ -16,7 +16,7 @@ Initially, I built these plugins in Blueprint. However, when I started using the
 {{< space 2 >}}
 
 💬 If you encounter bugs, have suggestions for improvements or new features, or just need help, feel free to reach out at:  
-[📩 Email](mailto:rightsofar143@gmail.com)
+[📩 Email](mailto:lightstefar@gmail.com)
 
 ---
 

@@ -1,14 +1,20 @@
 {{- $folder := .Get "folder" -}}
-{{- $images := .Page.Resources.Match (printf "%s/*" $folder) -}}
+{{- $pattern := printf "%s/*" $folder -}}
+
+{{- $images := .Page.Resources.Match $pattern -}}
+{{- if not $images -}}
+  {{- $images = .Page.Parent.Resources.Match $pattern -}}
+{{- end -}}
+
 {{- $uniqueID := .Ordinal -}}
 
 <div class="hugo-slider-container" id="slider-{{ $uniqueID }}">
   <div class="slider-viewport">
     {{ range $index, $image := $images }}
       <div class="slide {{ if eq $index 0 }}active{{ end }}">
-        <img src="{{ $image.RelPermalink }}" alt="{{ $image.Title }}">
+        <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
         
-        <!-- Accessing the custom variable 'caption' -->
+        
         {{ with $image.Params.caption }}
           <div class="image-label">{{ . }}</div>
         {{ else }}

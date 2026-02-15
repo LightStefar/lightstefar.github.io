@@ -29,14 +29,17 @@ menu:
       name: Fast Powerlines
       url: /powerlines
       parent: plugins
-    - identifier: fencetool
-      name: Ultimate Fence Tool
-      url: /fencetool
-      parent: plugins
+      weight: 1
     - identifier: pipes
       name: Pipe Builder
       url: /pipes
       parent: plugins
+      weight: 2
+    - identifier: fencetool
+      name: Fence Tool
+      url: /fencetool
+      parent: plugins
+      weight: 3
     - name: About
       pageref: /about
       weight: 3

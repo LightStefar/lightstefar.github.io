@@ -3,7 +3,7 @@ title: Actor
 type: docs
 weight: 2
 prev: powerlines/getting-started
-next: connection
+next: powerline-connection
 
 resources:
   - src: "Copy/Copy_Offset_1.png"
@@ -44,7 +44,7 @@ Key design choices improve workflow:
 
 Simply select the required data asset, and you are ready to build.
 
-#### Powerline Variables
+## General
 
 | Variable | Default | Description |
 |:--|:--|:--|
@@ -66,6 +66,7 @@ An optional line trace system for automatically aligning spline points to a surf
 |:--|:--|:--|
 | **Type** | None | **None:** Disables surface alignment.<br> **Trace:** Performs a line trace from each spline point (along the Z-axis) and aligns to the first blocking hit.<br> **Trace Debug:** Same as Trace, but draws debug lines for visualization. |
 | **Distance Up Down** | (250, 500) | The maximum trace distance in units. **X** = upward direction, **Y** = downward direction. |
+| **Trace Channel** | Visibility | Trace collision channel. |
 | **Offset** | 0 | Offsets the aligned spline point along the hit surface's normal by this distance. |
 
 ---
@@ -159,10 +160,10 @@ To create a custom powerline actor, follow these steps:
 
 #### Create a Blueprint Class
 Right-click in the **Content Browser** and select **Blueprint Class**.
-{{< figure src="InheritActor_01.png" alt="Select blueprint class" >}}
+{{< figure src="/images/InheritActor_01.png" alt="Select blueprint class" >}}
 
 #### Choose the Native Powerline Class
-In the **Pick Parent Class** window, type "powerline" in the search bar. Select the **Powerline** class as shown below, then click **Select**. Enter a name for your new custom actor.
+In the **Pick Parent Class** window, type `powerline` in the search bar. Select the **Powerline** class as shown below, then click **Select**. Enter a name for your new custom actor.
 {{< figure src="InheritActor_02.png" alt="Select powerline class" >}}
 
 #### Configure Default Values

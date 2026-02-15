@@ -41,7 +41,7 @@ Open the Content Browser and navigate to the Powerlines plugin folder.
 
 {{< callout type="info" >}}
 If the plugin folder is not visible, ensure **Show Plugin Content** is enabled. Click the **Settings** button in the top-right corner of the Content Browser and check this option.
-{{< figure src="/powerlines/PluginContent.png" alt="Show plugin folder" >}}
+{{< figure src="/images/PluginContent.png" alt="Show plugin folder" >}}
 {{< /callout >}}
 
 #### Add a Powerline Actor to Your Level

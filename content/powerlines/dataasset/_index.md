@@ -2,7 +2,7 @@
 title: Data Asset
 type: docs
 weight: 3
-prev: powerlines/actor/optimization
+prev: powerlines/actor/powerline-optimization
 next: changelog
 
 resources:
@@ -235,7 +235,7 @@ Follow the steps below to create a custom data asset.
 #### Content Browser
 
 Navigate from the Content Browser to **Miscellaneous → Data Asset** as shown below:
-{{< figure src="NavidateData01.png" alt="Navigate from content browser" >}}
+{{< figure src="/images/NavidateData01.png" alt="Navigate from content browser" >}}
 
 #### Create New Asset
 

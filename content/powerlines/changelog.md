@@ -5,6 +5,14 @@ weight: 10
 prev: /powerlines
 ---
 
+<!-- ## Version 1.23
+
+### **Fixed**
+ *   Fixed target copy actor variable to copy points from itself.
+
+### **Added**
+* Customizable trace channel in traceing category.  -->
+
 ## Version 1.21
 
 ### **Changed**
