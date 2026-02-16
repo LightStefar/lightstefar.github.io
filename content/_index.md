@@ -22,7 +22,7 @@ width: full
     doc_link="pipes" 
     doc_text="Documentation"
     doc_icon="book-open" 
-    prod_link="https://example.com"
+    prod_link="https://fab.com/s/08d9941481ac"
 >}}
 
 {{< /product-grid >}}
