@@ -5,13 +5,16 @@ weight: 10
 prev: /powerlines
 ---
 
-<!-- ## Version 1.23
 
-### **Fixed**
- *   Fixed target copy actor variable to copy points from itself.
+## Version 1.23
 
 ### **Added**
-* Customizable trace channel in traceing category.  -->
+*   Customizable trace channel in the tracing struct.
+
+### **Fixed**
+*   Fixed an issue where the Target Copy Actor variable could copy points from itself, preventing point editing.
+
+---
 
 ## Version 1.21
 
