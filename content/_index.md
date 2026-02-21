@@ -37,7 +37,7 @@ width: full
     prod_link="https://fab.com/s/411dde96cc13"
 >}}
   {{< widget-product
-    image="images/Pipes.png"
+    image="images/Fog.png"
     doc_link="fogarea" 
     doc_text="Documentation"
     doc_icon="book-open" 
