@@ -40,11 +40,19 @@ menu:
       url: /fencetool
       parent: plugins
       weight: 3
+    - identifier: assets
+      name: Assets
+      weight: 3
+    - identifier: fogarea
+      name: Fog Area
+      url: /fogarea
+      parent: assets
+      weight: 1
     - name: About
       pageref: /about
-      weight: 3
-    - name: Search
       weight: 4
+    - name: Search
+      weight: 5
       params:
         type: search
     

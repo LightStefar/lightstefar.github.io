@@ -36,5 +36,12 @@ width: full
     image="images/RoadSigns.png"
     prod_link="https://fab.com/s/411dde96cc13"
 >}}
+  {{< widget-product
+    image="images/Pipes.png"
+    doc_link="fogarea" 
+    doc_text="Documentation"
+    doc_icon="book-open" 
+    prod_link="https://fab.com/s/08d9941481ac"
+>}}
 {{< /product-grid >}}
 
