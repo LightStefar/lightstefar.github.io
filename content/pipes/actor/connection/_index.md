@@ -27,7 +27,7 @@ Lets you spawn additional pipes to create a network, establish interconnections 
 
 **Spawn Pipe** (button/event) creates a new Pipe Builder actor as a copy of the source, automatically attaching its first point to the location specified by **Spawn Indexes**. A preview mesh appears when a valid spawn index is set, providing visual feedback for connection points.
 
-{{< figure src="Pipe_Spawn.webp" alt="Spawn new pipe" >}}
+![Spawn new pipe](Pipe_Spawn.webp)
 
 | Variable | Default | Description |
 |:--|:--|:--|
@@ -38,7 +38,7 @@ Lets you spawn additional pipes to create a network, establish interconnections 
 
 The example below illustrates a completed connection and highlights the benefits of working with interconnected pipes.
 
-{{< figure src="Pipe_Connection.webp" alt="Connecting pipes" >}}
+![Connecting pipes](Pipe_Connection.webp)
 
 ---
 
@@ -46,7 +46,7 @@ The example below illustrates a completed connection and highlights the benefits
 
 Allows you to copy spline points from any other actor whose root component is a **Spline Component** (e.g., an another pipe actor). This is useful for automatically aligning  with existing actors without manual point placement. If the target actor's spline is a closed loop, this property is also copied.
 
-{{< figure src="Pipe_Copy_Loop.webp" alt="Copy Pipe animation " >}}
+![Copy Pipe animation](Pipe_Copy_Loop.webp)
 
 #### Target Copy Offset
 A vector offset applied to all points copied from the **Target Copy Actor**.
@@ -69,11 +69,11 @@ To create a custom Pipe Builder actor, follow these steps:
 
 #### Create a Blueprint Class
 Right-click in the **Content Browser** and select **Blueprint Class**.
-{{< figure src="/images/InheritActor_01.png" alt="Select blueprint class" >}}
+![Select blueprint class](/images/InheritActor_01.png)
 
 #### Choose the Native Pipe Builder Class
 In the **Pick Parent Class** window, type `pipe` in the search bar. Select the **Pipe Builder** class as shown below, then click **Select**. Enter a name for your new custom actor.
-{{< figure src="Pipe_InheritActor.png" alt="Select pipe builder class" >}}
+![Select pipe builder class](Pipe_InheritActor.png)
 
 #### Configure Default Values
 Open your new Blueprint and customize its properties (like cable settings, materials, or spline defaults) to fit your project's needs.

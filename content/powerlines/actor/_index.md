@@ -34,7 +34,7 @@ resources:
       caption: "World"     
 ---
 
-{{< figure src="Powerline_Build.webp" alt="Building powerline " >}} 
+![Building powerline](Powerline_Build.webp)
 
 The Powerline Actor uses a **Spline Component** as its root, allowing you to build complex powerline networks in seconds. The actor is written entirely in C++, ensuring high performance that does not degrade with additional spline points and providing smooth interaction in the editor.
 
@@ -146,7 +146,7 @@ Enables a debug visualization of the cable points.
 This debug view can significantly impact editor performance. Use it cautiously.
 {{< /callout >}}
 
-{{< figure src="DebugPoints.png" alt="Cable points debug view" >}}
+![Cable points debug view](DebugPoints.png)
 
 ---
 
@@ -160,11 +160,12 @@ To create a custom powerline actor, follow these steps:
 
 #### Create a Blueprint Class
 Right-click in the **Content Browser** and select **Blueprint Class**.
-{{< figure src="/images/InheritActor_01.png" alt="Select blueprint class" >}}
+![Select blueprint class](/images/InheritActor_01.png)
+
 
 #### Choose the Native Powerline Class
 In the **Pick Parent Class** window, type `powerline` in the search bar. Select the **Powerline** class as shown below, then click **Select**. Enter a name for your new custom actor.
-{{< figure src="InheritActor_02.png" alt="Select powerline class" >}}
+![Select powerline class](InheritActor_02.png)
 
 #### Configure Default Values
 Open your new Blueprint and customize its properties (like cable settings, materials, or spline defaults) to fit your project's needs.

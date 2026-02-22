@@ -69,12 +69,12 @@ To create sockets follow the steps below.
 #### Add Socket
 
 Navigate to the Socket Manager tab within the Static Mesh Editor and click the **+** button to create a new socket.
-{{< figure src="SocketAdd.png" alt="Interface for adding a new socket" >}}
+![Interface for adding a new socket](SocketAdd.png)
 
 #### Define Socket Transform
 
 Position and orient the socket using the viewport manipulator or by entering precise values in the Details panel. 
-{{< figure src="SocketTransform.png" alt="Socket transformation controls" >}}
+![Socket transformation controls](SocketTransform.png)
 
 {{< callout type="important" >}}
 Socket positions must align exactly with the mesh’s start and end connection points. Misaligned sockets will produce overlaps or visible gaps.
@@ -171,7 +171,7 @@ Every junction mesh intended as a branch point **must** include sockets at each 
 Socket location and orientation must be precise. Incorrectly placed sockets will produce issues with pipe spawning and connections.
 {{< /callout >}}
 
-{{< figure src="SocketJunction.png" alt="Junction sockets" >}}
+![Junction sockets](SocketJunction.png)
 
 ---
 

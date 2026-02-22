@@ -82,7 +82,7 @@ Below is a complete list of all powerline related properties.
 
 The Pole Array defines the library of static meshes which are used as support meshes. Includes weighted probability that controls how often each mesh is selected during generation.
 
-{{< figure src="PoleArray.png"  alt="Array of poles" >}}
+![Array of poles](PoleArray.png)
 
 The powerline actor uses a random stream to select meshes based on these weights, weight value in range of `0-100` that determines its likelihood of being chosen. A value of 0 completely excludes the mesh from selection. 
 <br>You can add any number of mesh entries.
@@ -93,7 +93,8 @@ The powerline actor uses a random stream to select meshes based on these weights
 
 Static mesh sockets serve as the primary connection points for cable generation. Cables are automatically created between matching sockets on consecutive poles within the powerline system.
 
-{{< figure src="Sockets.png" alt="Visualization of pole sockets as cable attachment points" >}}
+![Visualization of pole sockets as cable attachment points](Sockets.png)
+
 
 To add a custom socket to a static mesh for cable generation, follow these steps:
 
@@ -102,7 +103,7 @@ To add a custom socket to a static mesh for cable generation, follow these steps
 #### Add Socket
 
 Navigate to the Socket Manager tab within the Static Mesh Editor and click the **+** button to create a new socket.
-{{< figure src="SocketAdd.png" alt="Interface for adding a new socket" >}}
+![Interface for adding a new socket](SocketAdd.png)
 
 #### Configure Socket Name
 
@@ -114,7 +115,7 @@ Cable generation matches sockets based on their **exact name** across different 
 #### Set Socket Transform
 
 Position and orient the socket using the viewport manipulator or by entering precise values in the Details panel.  
-{{< figure src="SocketTransform.png" alt="Socket transformation controls" >}}
+![Socket transformation controls](SocketTransform.png)
 
 {{% /steps %}}
 
@@ -148,7 +149,7 @@ Below is a complete list of all cable properties.
 ### Materials
 
 Cable materials are randomly selected and managed by the powerline actor stream. Each unique material creates an additional mesh section in the procedural cable mesh, resulting in an extra draw call. This feature is particularly useful for default powerlines to create randomized wind effects across cables. A single material can also be used without issue.
-{{< figure src="CableMaterials.png" alt="Cable materials array" >}}
+![Cable materials array](CableMaterials.png)
 
 ---
 
@@ -163,10 +164,10 @@ Wind properties are designed specifically for use with a dedicated cable materia
 | **B (Blue)** | Random strength modifier – a per-cable random value (0–1) used to interpolate between minimum and maximum wind strength values. |
 
 **Visualization of all vertex color channels:**  
-{{< figure src="CableWind.png" alt="Wind vertex colors" >}}
+![Wind vertex colors](CableWind.png)
 
 **Random values in G and B channels:**  
-{{< figure src="CableRandom.png" alt="Wind random vertex colors" >}}
+![Wind random vertex colors](CableRandom.png)
 
 ---
 
@@ -235,11 +236,11 @@ Follow the steps below to create a custom data asset.
 #### Content Browser
 
 Navigate from the Content Browser to **Miscellaneous → Data Asset** as shown below:
-{{< figure src="/images/NavidateData01.png" alt="Navigate from content browser" >}}
+![Navigate from content browser](/images/NavidateData01.png)
 
 #### Create New Asset
 
 In the pop-up window, find and select the **Powerline Data Asset** class. Press the **Select** button, then enter a name for your custom data asset (for example: `DA_CustomPowerline`).
-{{< figure src="CreateDataAsset.png" alt="Create new data asset" >}}
+![Create new data asset](CreateDataAsset.png)
 
 {{% /steps %}}

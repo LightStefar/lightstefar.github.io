@@ -57,7 +57,7 @@ resources:
       caption: "Fitted type timings" 
 ---
 
-{{< figure src="Pipe_Build.webp" alt="Building pipes" >}} 
+![Building pipes](Pipe_Build.webp)
 
 The Pipe Builder actor uses a spline component to generate procedural pipe networks with full control over geometry, corners, junctions, and supports. Built in C++ for responsive editor performance.
 
@@ -213,8 +213,7 @@ Tip: For automatic junctions at every spline point, set Junction Selection Mode 
 
 {{< callout type="info" >}}
 To quickly create an inline junction, select a point, switch the gizmo to local space using Ctrl+`, then hold Alt and drag in your preferred direction. This will create an additional inline point. See the example below.
-
-{{< figure src="Pipe_Inline.webp" alt="Create inline junction" >}} 
+![Create inline junction](Pipe_Inline.webp)
 
 {{< /callout >}}
 
@@ -225,7 +224,8 @@ To quickly create an inline junction, select a point, switch the gizmo to local 
 | **Debug Text Type** | None | **Editor-only** <br> Adds debug visualization of spline point numbers. Text components aren't packaged, they only exist in-editor. Height and text size is configured in data asset. <br> **None:** Disable<br> **Show:** Display text <br> **Flip Height:** Flip direction offset of height, default is Upward direction or Z axis.|
 | **Visualize Corners** | false | **Editor-only** <br> Draws debug arrows at each corner to visualize angle and orientation for spline mesh correction. |
 
-{{< figure src="DebugCorners.png" alt="Corner debug visualization example" >}} 
+![Corner debug visualization example](DebugCorners.png)
+ 
 
 
 

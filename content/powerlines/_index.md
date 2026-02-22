@@ -3,7 +3,8 @@ title: Fast Powerlines
 toc: false
 ---
 
-{{< figure src="Powerline_loop.webp" alt="Powerlines animation" >}}
+![Powerlines animation](Powerline_loop.webp)
+
 {{< prod-button link="https://fab.com/s/245d9e48759f" >}}
 
 Fast Powerlines is an Unreal Engine plugin that enables you to construct detailed powerline networks in minutes. Cables are dynamically generated at runtime using a Procedural Mesh Component, with a clean separation between data configuration and level placement for an efficient workflow.

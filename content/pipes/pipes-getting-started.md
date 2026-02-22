@@ -27,7 +27,7 @@ Type `pipe builder` in search bar.
 
 #### Enable the Plugin
 Enable the plugin by checking its box as shown below.
-{{< figure src="/pipes/EnablePlugin.png" alt="Enable plugin" >}}
+![Enable plugin](/pipes/EnablePlugin.png)
 
 {{% /steps %}}
 
@@ -37,17 +37,17 @@ Enable the plugin by checking its box as shown below.
 
 #### Navigate to the Plugin Folder
 Open the Content Browser and navigate to the Powerlines plugin folder.
-{{< figure src="/pipes/Navigate.png" alt="Navigate to plugin" >}}
+![Navigate to plugin](/pipes/Navigate.png)
 
 {{< callout type="info" >}}
 If the plugin folder is not visible, ensure **Show Plugin Content** is enabled. Click the **Settings** button in the top-right corner of the Content Browser and check this option.
-{{< figure src="/images/PluginContent.png" alt="Show plugin folder" >}}
+![Show plugin folder](/images/PluginContent.png)
 {{< /callout >}}
 
 #### Add a Powerline Actor to Your Level
 
 Type `pipe` into the **Place Actors** search bar and drag the actor from there into level.
-  {{< figure src="/pipes/Pipes_DragDrop.webp" alt="Drag drop from place actors" >}}
+![Drag drop from place actors](/pipes/Pipes_DragDrop.webp)
 
 #### Edit the Spline
 
@@ -62,7 +62,7 @@ It's best to turn on Grid snap in the editor and set it to `50` units.
 Click the `Data` Asset dropdown button and select a different preset. 
 {{< callout type="info" >}}
 If data assets are not visible, ensure **Plugin Content** is enabled. Click the **Settings** button on the center-right side of the window and check this option.
-{{< figure src="/pipes/Pipe_PluginContent.png" alt="Show plugin folder" >}}
+![Show plugin content](/pipes/Pipe_PluginContent.png)
 {{< /callout >}}
 
 

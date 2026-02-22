@@ -14,10 +14,11 @@ Connection allows you to create a network of connected powerlines or connect cab
 #### Add a New Entry
 Add a new entry to the connection array and set its **Type** to `Powerline`.
 
-{{< figure src="/powerlines/actor/Connection_Entry.png" alt="Create new entry" >}}
+![Create new entry](/powerlines/actor/Connection_Entry.png)
+
 {{< callout >}}
 **Tip**: You can quickly add a new entry by left-clicking an arrow icon next to an existing entry and pressing **Duplicate**. This saves time when creating a large network.
-{{< figure src="/powerlines/actor/Connection_Duplicate.png" alt="Duplicate hack" >}}
+![Duplicate hack](/powerlines/actor/Connection_Duplicate.png)
 {{< /callout >}}
 
 #### Select an Actor
@@ -30,7 +31,7 @@ Define the source and target spline points using the **Pole Indexes** property. 
 If you are unsure of a spline point's index, set the **Show Text Type** property to **Scaled**. This visualizes the index numbers on each pole.
 {{< /callout >}}
 
-{{< figure src="/powerlines/actor/Connection_01.webp" alt="Connect powerlines" >}}
+![Connect powerlines](/powerlines/actor/Connection_01.webp)
 
 #### Optional: Configure Cables
 For **Powerline** type connections, you can change the **Cable Connection Type** from `All` to `Probability` to control cable density, or to `Manual` for precise control.
@@ -61,12 +62,13 @@ Text components are marked as editor-only and stripped from shipping builds irre
 ---
 
 #### Cable Actor Connection Type 
-*Actor Type Only*<br>
+
+*Actor Type Only*
+
 Chooses how to define connection points on the target actor.
 *   **Points:** Uses the **Actor Connected Points** array.
 *   **Bones:** Uses the **Actor Connected Bones** array (ideal for actors with many sockets).
   
-
 | Variable | Description |
 |:--|:--|
 | **Actor Connected Points** | **Points type only**<br> An array specifying connection points. Each entry defines a pair: **X** (source index on this actor) and **Y** (target point index on the connected actor). |
@@ -75,7 +77,9 @@ Chooses how to define connection points on the target actor.
 ---
 
 #### Cable Connection Type 
-*Powerline Type Only*<br>
+
+*Powerline Type Only*
+
 Controls how cables are generated between connected powerline poles.
 *   **All:** Creates a cable for every possible connection between poles.
 *   **Random:** Creates cables randomly based on a probability weight.

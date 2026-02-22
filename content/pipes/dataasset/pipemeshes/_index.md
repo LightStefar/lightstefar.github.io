@@ -35,11 +35,11 @@ While many marketplace assets are compatible, most will require pivot or rotatio
 
 * **All fitted corner meshes** must point **upward** along the Z axis, as illustrated below.
 
-{{< figure src="Corner_Up.png" alt="Fitted mesh corner Up Vector" >}}
+![Fitted mesh corner Up Vector](Corner_Up.png)
 
 * **Forward axis** must align with **X**, and the pivot point must be positioned at the mesh’s **start**, not its center.
 
-{{< figure src="Loop_Axis.png" alt="Mesh forward axis" >}}
+![Mesh forward axis](Loop_Axis.png)
 
 ## Corner Mesh Pivot Placement
 
@@ -73,11 +73,11 @@ Follow the steps below to create a custom data asset.
 #### Content Browser
 
 Right‑click in the Content Browser, navigate to **Miscellaneous → Data Asset**.
-{{< figure src="/images/NavidateData01.png" alt="Navigate from content browser" >}}
+![Navigate from content browser](/images/NavidateData01.png)
 
 #### Create New Asset
 
 In the pop-up window, find and select the **Pipe Builder Data Asset** class. Press the **Select** button, then enter a name for your custom data asset (for example: `DA_CustomPipe`).
-{{< figure src="CreateDataAsset.png" alt="Create new data asset" >}}
+![Create new data asset](CreateDataAsset.png)
 
 {{% /steps %}}
