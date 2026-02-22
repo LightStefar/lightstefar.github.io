@@ -27,8 +27,7 @@ Type `fast` in search bar.
 
 #### Enable the Plugin
 Enable the plugin by checking its box as shown below.
-{{< figure src="/powerlines/EnablePlugin.png" alt="Enable plugin" >}}
-
+![Enable plugin](/powerlines/EnablePlugin.png)
 {{% /steps %}}
 
 ## Quickstart
@@ -37,11 +36,10 @@ Enable the plugin by checking its box as shown below.
 
 #### Navigate to the Plugin Folder
 Open the Content Browser and navigate to the Powerlines plugin folder.
-{{< figure src="/powerlines/Navigate.png" alt="Navigate to plugin" >}}
-
+![Navigate to plugin](/powerlines/Navigate.png)
 {{< callout type="info" >}}
 If the plugin folder is not visible, ensure **Show Plugin Content** is enabled. Click the **Settings** button in the top-right corner of the Content Browser and check this option.
-{{< figure src="/images/PluginContent.png" alt="Show plugin folder" >}}
+![Show plugin folder](/images/PluginContent.png)
 {{< /callout >}}
 
 #### Add a Powerline Actor to Your Level
@@ -58,7 +56,7 @@ Add and move spline points to define the path of your powerline.
 Click the `Data` Asset dropdown button and select a different preset. 
 {{< callout type="info" >}}
 If data assets are not visible, ensure **Plugin Content** is enabled. Click the **Settings** button on the center-right side of the window and check this option.
-{{< figure src="/powerlines/PluginContent_Data.png" alt="Show plugin folder" >}}
+![Show plugin content](/powerlines/PluginContent_Data.png)
 {{< /callout >}}
 
 

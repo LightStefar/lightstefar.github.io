@@ -30,7 +30,7 @@ To get started with a tool and immideatly see local fog in action - Drag and dro
 
 {{< callout type="info" >}}
 If the fog is invisible, make sure that  `Volumetric Fog` is enabled in Exponential fog actor.
-{{< figure src="EnableFog.png" alt="Enable Volumetric Fog" >}}
+![Enable Volumetric Fog](EnableFog.png)
 {{< /callout >}}
 
 ## Material Modes
@@ -101,11 +101,11 @@ Put your global wind from Material Parameter Collection to `Global Wind` pin and
 ## Modes
 
 Fog area split into 3 modes: Shadows, Distance Field and Light Shafts. 
-{{< figure src="Area_Modes.png" alt="Fog are modes" >}}
+![Fog are modes](Area_Modes.png)
 
 Under the hood this modes are just regular material instances with preconfigured switches. 
 Materials are stored as `Soft` pointers to reduce memory footprint and decrease dependencies from a fog area actor. 
-{{< figure src="Area_ModeSplit.png" alt="Static materials" >}}
+![Static materials](Area_ModeSplit.png)
 
 ### Performance
 The reason why mateiral are split into separate material instances with preconfigured switches is only - performance. 
@@ -113,8 +113,7 @@ The reason why mateiral are split into separate material instances with preconfi
 
 By splitting material to a separate instances greatly reduces amount of shader instruction and allows to use the same actor without worrying for performance. 
 Bellow is an example map in Shader Complexity debug view with different modes on each fog area actor. 
-{{< figure src="Area_Complexity.png" alt="Debug shader complexity view" >}}
-
+![Debug shader complexity view](Area_Complexity.png)
 ---
 
 ### Self Shadows Data
@@ -138,7 +137,7 @@ Bellow is an example map in Shader Complexity debug view with different modes on
 
 {{< callout type="info" >}}
 If the distance field mode doesn't change anything, make sure that `Generate Mesh Distance Fields` is enabled in Project Settings.
-{{< figure src="EnableField.png" alt="Enable mesh distance field" >}}
+![Enable mesh distance field](EnableField.png)
 {{< /callout >}}
 
 ---
