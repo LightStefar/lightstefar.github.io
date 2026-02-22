@@ -3,7 +3,7 @@ title: Pipe Builder
 toc: false
 ---
 
-{{< hero-cover src="Pipe_Loop.webp" alt="Pipe presets animation" >}}
+{{< figure src="Pipe_Loop.webp" alt="Pipe presets animation" >}}
 {{< prod-button link="https://fab.com/s/08d9941481ac" >}}
 
 Pipe Builder is an Unreal Engine plugin that enables you to construct detailed pipe networks in minutes using an intuitive spline‑based workflow.
