@@ -12,7 +12,7 @@
   <div class="slider-viewport">
     {{ range $index, $image := $images }}
       <div class="slide {{ if eq $index 0 }}active{{ end }}">
-        <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
+        <img src="{{ .RelPermalink }}" alt="{{ .Title }}" data-zoomable="true">
         {{ with $image.Params.caption }}
           <div class="image-label">{{ . }}</div>
         {{ else }}
@@ -75,7 +75,9 @@
     const id = {{ .Ordinal }};
     const container = document.getElementById(`slider-${id}`);
     let isHovered = false;
-
+    const isZoomActive = () => {
+        return !!document.querySelector('.medium-zoom-image--opened, .medium-zoom-overlay');
+    };
     // Pause auto-play when user mouse is over the image
     container.addEventListener('mouseenter', () => isHovered = true);
     container.addEventListener('mouseleave', () => isHovered = false);
@@ -85,7 +87,7 @@
 
      function startAutoPlay() {
       setInterval(() => {
-        if (!isHovered) 
+        if (!isHovered && !isZoomActive()) 
         {
           moveSlide(1, id);
         }
