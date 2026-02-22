@@ -13,14 +13,11 @@
     {{ range $index, $image := $images }}
       <div class="slide {{ if eq $index 0 }}active{{ end }}">
         <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
-        
-        
         {{ with $image.Params.caption }}
           <div class="image-label">{{ . }}</div>
         {{ else }}
           <div class="image-label">{{ $image.Name }}</div>
         {{ end }}
-        
       </div>
     {{ end }}
   </div>
