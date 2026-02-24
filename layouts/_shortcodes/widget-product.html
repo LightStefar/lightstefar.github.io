@@ -7,9 +7,9 @@
 <div class="hero-widget">
     <div class="hero-image">
     {{ with .Page.Resources.GetMatch $img }}
-        <img src="{{ .RelPermalink }}" alt="Hero Image" class="hx:block hx:w-full hx:h-auto" style="display: block; margin-bottom: 0; margin-top: 0;">
+        <img src="{{ .RelPermalink }}" alt="Hero Image" class="hx:block hx:w-full hx:h-auto" style="display: block; margin-bottom: 0; margin-top: 0;" data-zoomable="true">
     {{ else }}
-        <img src="{{ $img | relURL }}" alt="Hero Image" class="hx:block hx:w-full hx:h-auto" style="display: block; margin-bottom: 0; margin-top: 0;">
+        <img src="{{ $img | relURL }}" alt="Hero Image" class="hx:block hx:w-full hx:h-auto" style="display: block; margin-bottom: 0; margin-top: 0;" data-zoomable="true">
     {{ end }}
     </div>
     <div class="widget-actions hx:gap-4 hx:p-4 hx:flex hx:justify-center hx:items-center hx:bg-white hx:dark:bg-neutral-800">
