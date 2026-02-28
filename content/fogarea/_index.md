@@ -19,7 +19,7 @@ resources:
 
 {{< space 2 >}}
 
-{{< prod-button link="https://fab.com/s/245d9e48759f" >}}
+{{< prod-button link="https://fab.com/s/64922c047d6c" >}}
 
 Fog Area is a handy, blueprint-based tool that adds procedural, noise-driven local fog to your scenes. It is easy to use and highly customizable. The package includes pre-baked noise textures for optimized runtime performance. The core fog shader supports two types of local volumes: sphere and box.
 
@@ -66,7 +66,7 @@ The wind direction can be set to either **Local** or **World** space using the `
 
 | Variable | Default Value | Description |
 |----------|---------------|-------------|
-| **Channel** | G | Texture channel used for sampling the noise texture |
+| **Channel** | R | Texture channel used for sampling the noise texture |
 | **Scale** | 2.5 | Scale multiplier for noise texture |
 | **Sharpness** | 0.35 | Controls the softness or contrast of the noise texture |
 | **Noise Texture** | None | Allows overriding the default 3D noise texture |
@@ -87,7 +87,6 @@ Allows you to mask the fog with a 2D texture, creating any shapes.
 | **Rotation** | 0.0 | Rotation angle of shape texture (in radians) |
 | **Scale** | 1.0 | Scale multiplier for shape texture |
 
----
 
 ## Advanced
 
