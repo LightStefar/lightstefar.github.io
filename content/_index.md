@@ -44,7 +44,7 @@ width: full
 >}}
 {{< widget-product
     image="images/BulletDecals.png"
-    prod_link="https://fab.com/s/411dde96cc13"
+    prod_link="https://fab.com/s/ec3059b723bc"
 >}}
 {{< /product-grid >}}
 
