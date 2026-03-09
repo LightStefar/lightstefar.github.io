@@ -23,6 +23,13 @@ width: full
     doc_icon="book-open" 
     prod_link="https://fab.com/s/08d9941481ac"
 >}}
+  {{< widget-product
+    image="images/SkeletalDecals.png"
+    doc_link="skeletaldecals" 
+    doc_text="Documentation"
+    doc_icon="book-open" 
+    prod_link="https://fab.com/s/08d9941481ac"
+>}}
 
 {{< /product-grid >}}
 

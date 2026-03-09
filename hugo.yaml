@@ -46,11 +46,17 @@ menu:
       pageRef: /pipes
       parent: plugins
       weight: 2
-    - identifier: fencetool
-      name: Fence Tool
-      pageRef: /fencetool
+    - identifier: skeletaldecals
+      name: Skeletal Decals
+      pageRef: /skeletaldecals
       parent: plugins
       weight: 3
+    # - identifier: fencetool
+    #   name: Fence Tool
+    #   pageRef: /fencetool
+    #   parent: plugins
+    #   weight: 4 
+    
     - identifier: fogarea
       name: Fog Area
       pageRef: /fogarea
