@@ -28,7 +28,7 @@ width: full
     doc_link="skeletaldecals" 
     doc_text="Documentation"
     doc_icon="book-open" 
-    prod_link="https://fab.com/s/08d9941481ac"
+    prod_link="https://fab.com/s/eb887b3cedca"
 >}}
 
 {{< /product-grid >}}

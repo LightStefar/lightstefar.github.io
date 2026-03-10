@@ -10,7 +10,7 @@ toc: false
 
 {{< space 2 >}}
 
-{{< prod-button link="https://fab.com/s/245d9e48759f" >}}
+{{< prod-button link="https://fab.com/s/eb887b3cedca" >}}
 
 
 Skeletal Decals is an Unreal Engine plugin that eliminates decal drifting on skeletal meshes by handling decal calculations within the material through custom HLSL, using a render target as an efficient lookup table.
