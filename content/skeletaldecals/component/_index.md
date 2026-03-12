@@ -82,8 +82,16 @@ If you wish to override the default appearance of the material layer, it is reco
 
 ![Spawn decal animation functions](SpawnDecalExplained.png)
 
-The `Spawn Decal` function can be constructed using helper functions or manually if you need to pass specific data.
-**Note:** The `Angle` parameter is only valid in **Projection mode** and will be ignored in **Sphere mode**.
+**Spawn Decal**
+
+Checks which primitive component was hit and verifies if it is initialized in the Skeletal Decals Component. 
+<br> The function can be constructed using helper functions or implemented manually when specific data needs to be passed.
+<br>
+**Returns:** The actual index of the active decal, which may be newly added or recycled. Returns `-1` if the decal could not be spawned for any reason.
+
+{{< callout type="info" >}}
+**Note**: The Angle parameter is only valid in Projection mode and will be ignored in Sphere mode.
+{{< /callout >}}
 
 The following functions can be used to control spawn behavior:
 
@@ -100,14 +108,19 @@ The following functions can be used to control spawn behavior:
 
 | Function | Description |
 |:--|:--|
-| **Remove All Decals** | Deletes all decals from the component. |
-| **Remove Decal at Index** | Sets the opacity of a specific decal to 0, marking its slot as available to be overwritten by a new decal. |
+| **Remove All Decals** | Deletes all decals from the component. (Clear render target) |
+| **Remove Decal at Index** | Sets a specific decal's opacity to 0, freeing its slot for a new decal.<br>**Returns:** Boolean indicating success.|
 
 ---
 
 ## Animation System
 
-This component features a user-controlled animation system similar to Unreal's native decals. Animation is calculated during the `TickComponent` event and uses Delta Time. Performance can be fine-tuned for specific project needs by adjusting the `Tick Interval` parameter.
+This component features a user-controlled animation system similar to Unreal's native decals. Animation is calculated during the `TickComponent` event and uses Delta Time. Performance can be fine-tuned for specific project needs by adjusting the `Tick Interval` parameter. 
+
+{{< callout type="info" >}}
+**Performance** <br>
+`TickComponent` automatically disables itself once all animated decals have faded out and re-enables itself as soon as a new animated decal is spawned.
+{{< /callout >}}
 
 The system consists of a **Delay Time** and a **Fade Time**. Each decal stores its own animation parameters.
 - **Delay Time:** The amount of time before the fade begins. This can be set to zero.
