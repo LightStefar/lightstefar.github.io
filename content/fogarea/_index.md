@@ -34,12 +34,13 @@ If the fog is invisible, ensure that `Volumetric Fog` is enabled in your Exponen
 
 ## Material Modes
 
-Splitting materials into dynamic and static types allows you to boost performance. Static materials avoid creating a dynamic material instance for every fog actor in the scene. Almost all properties available in the fog shader are exposed in the Fog Area actor. You can configure a dynamic fog area with your preferred settings and then transfer those settings to a static version without needing to open the Material Editor.
+Splitting materials into dynamic and static types helps boost performance. Static materials avoid creating a dynamic material instance for every fog actor in the scene, reducing overhead.
+<br> Almost all properties available in the fog shader are exposed in the Fog Area actor. You can configure a dynamic fog area with your preferred settings and then transfer those settings to a static version without needing to open the Material Editor.
 
 | Variable | Default Value | Description |
 |----------|---------------|-------------|
 | **Box Shape** | false | Toggle between box and sphere shape |
-| **Material** | None | Reference to a static material. If Material Mode is set to static but this is null, it falls back to dynamic material |
+| **Material** | None | Reference to a static material. If Material Mode is set to static but this is null, it falls back to **dynamic** material |
 
 ## General Data
 
@@ -81,7 +82,7 @@ Allows you to mask the fog with a 2D texture, creating any shapes.
 
 | Variable | Default Value | Description |
 |----------|---------------|-------------|
-| **bUseShape** | false | Toggle shape-based fog masking |
+| **Use Shape** | false | Toggle shape-based fog masking |
 | **Shape Texture** | None | 2D texture used for fog masking |
 | **Channel** | R | Texture channel used for shape sampling |
 | **Rotation** | 0.0 | Rotation angle of shape texture (in radians) |

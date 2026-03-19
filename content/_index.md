@@ -53,5 +53,12 @@ width: full
     image="images/BulletDecals.png"
     prod_link="https://fab.com/s/ec3059b723bc"
 >}}
+ <!--  {{< widget-product
+    image="images/Fog.png"
+    doc_link="fastclouds" 
+    doc_text="Documentation"
+    doc_icon="book-open" 
+    prod_link="https://fab.com/s/64922c047d6c"
+>}} -->
 {{< /product-grid >}}
 

@@ -62,6 +62,11 @@ menu:
       pageRef: /fogarea
       parent: assets
       weight: 1
+    - identifier: fastclouds
+      name: Fast Clouds
+      pageRef: /fastclouds
+      parent: assets
+      weight: 2
     
 enableGitInfo: true
 enableInlineShortcodes: true

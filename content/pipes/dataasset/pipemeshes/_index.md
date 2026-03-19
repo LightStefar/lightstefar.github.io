@@ -3,7 +3,7 @@ title: Custom Meshes
 type: docs
 weight: 3
 prev: pipes/dataasset/
-next: pipes-changelog
+next: pipes/blueprint
 
 resources:
   - src: "Corner90/Corner90_1.png"

@@ -65,6 +65,7 @@ The Pipe Builder actor uses a spline component to generate procedural pipe netwo
 
 | Variable | Default | Description |
 |:--|:--|:--|
+| **Run On Construction** | true | Per-class override that allows custom execution order. When disabled, pipe construction is skipped during the `Construction Script` phase. |
 | **Refresh** | false | Triggers the construction script and resets itself to `false`. Use this to safely update the actor (e.g., modifying connections) without needing to change another variable. |
 | **Data Asset** | Pipes Default | The primary data asset containing static meshes, material presets, and all other static configuration data.  |
 | **Stream** | Auto-generated | Random seed that controls all procedural variation within the actor, including preset selection, support placement, junctions, etc. |
@@ -182,8 +183,8 @@ You can revert this setting before packaging if needed.
 | Variable | Default | Description |
 |:--|:--|:--|
 | **Bend Scale** | 1.0 | Global bend multiplier applied to all corner meshes (including manual overrides). Clamped to minimum **0.1**.  |
-| **Bend Corner Mesh Selection** | RandomOnce | Determines which static mesh asset will be selected. <br> • **RandomOnce**: A single mesh is chosen at random and used for all supports. <br> • **Random**: A mesh is randomly selected per support instance. <br> • **Manual**: Uses mesh specified by **Mesh Index**. |
-| **Manual Bend Data** | Empty | Per-corner overrides for **Manual** bend mode. <br> Each entry contains:<br> **Point Index:** Target spline point <br> **Bend Scale:** Multiplier (clamped to **0.1** minimum) <br> **Mesh Index:** Cyclical mesh index override <br><br>**Note:** Mesh index overrides only apply when **Bend Corner Mesh Selection** is set to **Manual**.|
+| **Corner Mesh Selection** | RandomOnce | Determines which static mesh asset will be selected. <br> • **RandomOnce**: A single mesh is chosen at random and used for all corners. `Note:` In fitted mode simply selects first in array. <br> • **Random**: A mesh is randomly selected per instance. <br> • **Manual**: Uses mesh specified by *Mesh Index*. |
+| **Manual Corner Data** | Empty | Per-corner overrides for **Manual** mode. <br> Each entry contains:<br> **Point Index:** Target spline point. <br> **Bend Scale:** Multiplier (clamped to 0.1). *Bent mode only* <br> **Mesh Index:** Cyclical mesh index override. <br> `Note:` Mesh index overrides only apply when **Corner Mesh Selection** is set to **Manual**.|
 
 ---
 
