@@ -7,7 +7,7 @@ toc: false
 
 {{< prod-button link="https://fab.com/s/245d9e48759f" >}}
 
-Fast Powerlines is an Unreal Engine plugin that enables you to construct detailed powerline networks in minutes. Cables are dynamically generated at runtime using a Procedural Mesh Component, with a clean separation between data configuration and level placement for an efficient workflow.
+Fast Powerlines is an Unreal Engine plugin that enables you to construct detailed powerline or cable networks in minutes. Cables are dynamically generated at runtime using a Procedural Mesh Component, with a clean separation between data configuration and level placement for an efficient workflow.
 
 **Key Features:**
 *   **Intuitive Workflow:** A user-friendly interface with logical data separation for ease of use.
@@ -18,6 +18,8 @@ Fast Powerlines is an Unreal Engine plugin that enables you to construct detaile
 *   **Network Connection System:** Create interconnected power grids by linking actors or connect cables to any actor with sockets or bones.
 *   **Customizable Wind Effects:** Vertex color-based wind system with contrast, sharpness, and intensity controls for dynamic, believable cable movement.
 *   **Editor Visualization Tools:** Debug views for cable points and pole indices to streamline the placement and connection process.
+*   **Atlas UV Support**: Manipulate cable UVs to reduce material usage, lower draw calls, and improve performance.
+*   **Blueprint API**: Use comprehensive blueprint functions and variables at runtime to procedurally generate powerline actors.
   
 
 ## Overview
@@ -31,7 +33,7 @@ This separation allows for efficient workflow: artists and designers can configu
 --- 
 
 {{< cards >}}
-  {{< card link="getting-started" title="Getting Started" icon="academic-cap" subtitle="Guide" >}}
-  {{< card link="changelog" title="Change Log" icon="document-text" subtitle="Log" >}}
+  {{< card link="powerlines-getting-started" title="Getting Started" icon="academic-cap" subtitle="Guide" >}}
+  {{< card link="powerlines-changelog" title="Change Log" icon="document-text" subtitle="Log" >}}
 {{< /cards >}}
 

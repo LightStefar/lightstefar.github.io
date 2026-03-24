@@ -1,9 +1,9 @@
 ---
 title: Blueprint API
 type: docs
-weight: 3
-prev: pipes/dataasset/pipemeshes/
-next: pipes-changelog
+weight: 4
+prev: powerlines/dataasset/
+next: powerlines-changelog
 
 resources:
   - src: "Variables/PipeVariables_1.png"
@@ -18,17 +18,15 @@ resources:
 
 Below is a complete list of available parameters and functions. If you find that this list is missing something, feel free to reach out.
 
-![All Blueprint functions](Pipe_Functions.png)
+![All Blueprint functions](PowerlineFunctions.png)
 
-{{< slider folder="Variables" >}}
+![All Blueprint variables](PowerlineVars.png)
+
+The `GetSocketTransformAtIndex()` node can be very useful after powerline construction for adding custom meshes or lights to poles. Virtual sockets can also be retrieved by setting the name to an index value, e.g. 0, 1, 2.
 
 ---
 
-By default, pipe actors construct themselves during the `Construction Script` phase. However, this behavior can be customized through two primary methods, depending on your specific needs:
-
-{{< callout type="important" >}}
-Spline points will be automatically converted to `Linear` interpolation type, regardless.
-{{< /callout >}}
+By default, powerline actors construct themselves during the `Construction Script` phase. However, this behavior can be customized through two primary methods, depending on your specific needs:
 
 
 ## Enhanced Construction Script
@@ -46,7 +44,7 @@ Navigate to your actor's Construction Script graph, right-click the `Constructio
 
 Insert your procedural logic before the parent function call. The example below demonstrates spline points manipulation.
 
-![Override construction script](OverrideScript.png)
+![Override construction script](PowerlineOverride.png)
 
 {{% /steps %}}
 
@@ -66,9 +64,13 @@ In your custom actor's Details panel, set the `Run on Construction` boolean prop
 
 ### Use a Custom Event
 
-Modify spline points or set any required variables before calling the `ConstructPipe()` function, as shown in the example below.
+Modify spline points or set any required variables before calling the `ConstructPowerline()` function, as shown in the example below.
 
-![Run on BeginPlay](Pipe_BeginPlay.png)
+![Run on BeginPlay](ExampleBeginPlay.png)
+
+{{< callout type="info" >}}
+The example above uses a `DelayUntilNextTick` node due to Unreal's event order. Without this delay, the connection fails to generate because the connected actor hasn't yet executed its own `ConstructPowerline()` function, leaving no data available to build the connection. In the Construction Script, everything works as expected.
+{{< /callout >}}
 
 {{% /steps %}}
 

@@ -3,7 +3,7 @@ title: Data Asset
 type: docs
 weight: 3
 prev: powerlines/actor/powerline-optimization
-next: changelog
+next: powerlines/blueprint
 
 resources:
 - src: "WindContrast/Contrast_1.png"
@@ -68,11 +68,18 @@ resources:
   params:
     caption: "Spacing 160" 
 
+- src: "CableMaterials/CableMaterials_1.png"
+  params:
+    caption: "Regular" 
+- src: "CableMaterials/CableMaterials_2.png"
+  params:
+    caption: "Altas or trim" 
+
 ---
 
 The Powerline Data Asset serves as a centralized configuration container that stores static properties for powerline systems. By separating this data from the actor itself, it enables efficient management, rapid prototyping, and easy sharing of settings across multiple powerline instances in your project. The asset is organized into two sections: 
-1. Powerline  
-2. Cable (containing cable-specific properties).
+* Powerline  
+* Cable (containing cable-specific properties).
 
 ## Powerline Reference
 
@@ -91,7 +98,8 @@ The powerline actor uses a random stream to select meshes based on these weights
 
 ### Sockets
 
-Static mesh sockets serve as the primary connection points for cable generation. Cables are automatically created between matching sockets on consecutive poles within the powerline system.
+Static mesh sockets serve as the primary connection points for cable generation. Cables are automatically created between matching sockets on consecutive poles within the powerline system. 
+
 
 ![Visualization of pole sockets as cable attachment points](Sockets.png)
 
@@ -117,6 +125,16 @@ Cable generation matches sockets based on their **exact name** across different 
 Position and orient the socket using the viewport manipulator or by entering precise values in the Details panel.  
 ![Socket transformation controls](SocketTransform.png)
 
+#### Add Socket Tag
+
+Click the Advanced menu, find the tag variable, and enter `Cable` or `cable`.
+
+![Socket tag](CableSocketTag.png)
+
+{{< callout type="important" >}}
+A cable requires a socket tag to generate. This system allows adding and using custom sockets unrelated to cable generation.
+{{< /callout >}}
+
 {{% /steps %}}
 
 ---
@@ -131,6 +149,7 @@ Position and orient the socket using the viewport manipulator or by entering pre
 
 | Variable | Default | Description |
 |:--|:--|:--|
+| **Mobility** | Movable | Global actor mobility. All generated components inherit this mobility type per Unreal requirements. |
 | **Spline Mesh Axis** | X | **Spline Mesh only.** <br> Defines which local mesh axis aligns with the spline direction. |
 | **Cull Distance Start End** | 0,0 | **ISM and HISM only.**<br> Maximum cull(render) distances for an instanced pole mesh. X = start, Y = end. |
 | **Base Pole Yaw** | 0° | Global rotation applied to all poles around the vertical (Z) axis. <br> Useful for correcting imported meshes that are not oriented to the desired world alignment. |
@@ -148,14 +167,32 @@ Below is a complete list of all cable properties.
 
 ### Materials
 
-Cable materials are randomly selected and managed by the powerline actor stream. Each unique material creates an additional mesh section in the procedural cable mesh, resulting in an extra draw call. This feature is particularly useful for default powerlines to create randomized wind effects across cables. A single material can also be used without issue.
-![Cable materials array](CableMaterials.png)
+Cable materials data is a customizable struct that serves as a container for cable UVs and materials, offering full control over generated cable UVs. Each entry can be selected randomly or manually by the powerline actor. <br> Atlas mode enables offsetting and scaling on the minor axis, allowing trim or atlas textures to reduce draw calls. Unique materials each add a mesh section to the procedural cable mesh, incurring an extra draw call. However, the same material used across different entries with varying UV parameters will be `batched` into a single mesh section.<br> Materials are also useful for default powerlines to create randomized wind effects.
+
+{{< space 2 >}}
+
+{{< slider folder="CableMaterials" >}}
+
+{{< space 2 >}}
+
+| Variable | Default | Description |
+|:--|:--|:--|
+| **Texture** | Regular | Switches between regular and atlas modes. <br> **Regular:** a standard tiled texture.<br> **Atlas:** for tiled trim textures, allows manipulation of UVs on the minor axis. |
+| **Mapping** | Relative | **Relative:** maps UVs based on cable length using the spacing value.<br>**Tile:** allows independent control of texture tiling regardless of cable spacing. |
+| **Tile Size** | 40 | Controls the scale of texture tiling along the cable length in Unreal units (only affects Tile mapping type). |
+| **Flip UV** | false | Swaps UV orientation between vertical (Y) and horizontal (X) axes. Default uses Y-axis (vertical) alignment, matching the example textures. Useful for rotated source textures. |
+| **Scale** | 1.0 | Allows scaling of cable UVs on the minor axis. Minimum value is 0.01. |
+| **Offset** | 0.0 | Allows offsetting of cable UVs on the minor axis. Clamped to -1 to 1. |
 
 ---
 
 ### Wind
 
 Wind properties are designed specifically for use with a dedicated cable material and are stored in the vertex colors of the cable mesh.
+{{< callout type="info" >}}
+If wind animation is not needed, disable vertex color writing by setting the `EnableWind` variable to false (default is true).
+{{< /callout >}}
+
 
 | Channel | Description |
 |:--|:--|
@@ -220,9 +257,6 @@ Controls the segment length along the cable's path, affecting both geometric smo
 | Variable | Default | Description |
 |:--|:--|:--|
 | **Cable Radius** | 3.0 | Defines the thickness of the cable in Unreal units. |
-| **Cable UV Mapping Type** | Relative | **Relative:** Maps UVs based on cable length using spacing value.<br>**Tile:** Allows independent control of texture tiling regardless of cable spacing. |
-| **Cable Tile Size** | 40 | Controls the scale of texture tiling along the cable length, in Unreal units (only affects Tile mapping type). |
-| **Cable Flip UV** | false | Swaps UV orientation between vertical (Y) and horizontal (X) axes. Default uses Y-axis (vertical) alignment, matching example textures. Useful for rotated source textures. |
 | **Cable Max Draw Distance** | 0 | Maximum rendering distance for cable meshes. Set to 0 for infinite draw distance. <br>**Note:** Works with both procedural and merged static mesh. |
 
 ---

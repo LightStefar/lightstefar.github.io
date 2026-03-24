@@ -2,7 +2,7 @@
 title: Actor
 type: docs
 weight: 2
-prev: powerlines/getting-started
+prev: powerlines-getting-started
 next: powerline-connection
 
 resources:
@@ -46,16 +46,30 @@ Simply select the required data asset, and you are ready to build.
 
 ## General
 
+The powerline actor supports two cable generation modes:
+
+* **Sockets:** Grabs positions from pole static mesh sockets tagged with `Cable` and uses them as cable points. (Default)
+* **Virtual Sockets:** Dynamic, user-defined mode that offers greater flexibility. You can adjust cable count, freely position cables, reuse the same static meshes and data asset, and maintain direct control over material sequences. Ideal for wall-mounted, ceiling, and similar cable systems.
+
+{{< video src="Powerline_Virtual.mp4" muted="true" autoplay="true" loop="true" >}}
+Example video showing how to build dynamic virtual sockets.
+
 | Variable | Default | Description |
 |:--|:--|:--|
 | **Refresh** | false | Triggers the construction script and resets itself to `false`. Use this to safely update the actor (e.g., after modifying connections) without needing to change another variable. |
 | **Data Asset** | Powerline Default | The primary Data Asset containing pole meshes, materials, and other static configuration. |
 | **Stream** | Auto-generated | The random seed that drives all procedural randomness (pole variation, cable gravity, etc.) within the actor. |
 | **Closed Loop** | false | **Spline Component property.** When enabled, connects the last spline point to the first, forming a continuous loop. Requires at least 3 points. |
-| **Material Selection Type** | None | Determines how material presets are selected from the data asset.<br>• **None:** Disables material selection and application to the mesh.<br>• **Random:** Randomly selects a preset from the data asset and stores the index in the `PoleMaterialIndex` variable.<br>• **Manual:** Allows direct selection of a preset by index. |
+
+
+## Materials 
+
+| Variable | Default | Description |
+|:--|:--|:--|
+| **Pole Preset Selection** | None | Determines how material presets are selected from the data asset.<br>• **None:** Disables material selection and application to the mesh.<br>• **Random:** Randomly selects a preset from the data asset and stores the index in the `Pole Preset Index` variable.<br>• **Manual:** Allows direct selection of a preset by index. |
 | **Pole Preset Index** | -1 | The index of the material preset applied to pole meshes. This is a cyclical index (any integer is valid).<br>A value less than 0 disables material selection and application. |
-
-
+| **Cable Material Selection** | Random | Determines how cable materials are selected from the data asset. <br>• **None:** Not used; automatically changes to Random type. <br>• **Random:** Randomly selects a material per cable. <br>• **Manual:** Allows direct selection of a cable material data by index for each virtual socket or static mesh socket. <br>**Note:** The order of materials is not guaranteed for the `Sockets` cable source type. |
+| **Manual Cable Materials** | Empty | List of indices for each socket or virtual socket. This is a cyclical index (any integer is valid). |
 ---
 
 ## Tracing
