@@ -9,8 +9,8 @@ prev: /powerlines
 
 ### **Added**
 * Blueprint API.
-* Source cable points type, allowing cable creation with dynamic, user-defined virtual sockets per actor.
-* Cable material selection type and manual cable materials list for each cable. Works with both virtual and regular sockets.
+* Cable generation modes, allowing cable creation with dynamic, user-defined virtual sockets per actor.
+* Cable material selection modes and manual cable materials list for each cable. Works with both virtual and regular sockets.
 * Optional `Enable Wind` variable in data asset.
 * `RunOnConstruction` boolean variable to allow skipping powerline construction during the Construction Script.
 
