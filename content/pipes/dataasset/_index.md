@@ -36,8 +36,28 @@ Below is a full list of parameters.
 | **Pipe Collision Profile** | – | Default collision profile applied to every mesh component. |
 | **Mobility** | Movable |Mobility setting for the root spline component and all attached child components. |
 | **Generate Overlaps** | false | When enabled, all pipe meshes raise overlap events.<br>**Note:** For ISM/HISM, `bMultiBodyOverlap` is automatically set to `true`. |
-| **Cast Shadows** | true | Shadow casting toggle for every pipe mesh.  |
-| **Material Presets** | Empty | Array of material presets enabling rapid switching between material configurations.  |
+| **Cast Shadows** | true | Shadow casting toggle for every pipe mesh. |
+
+### Material Presets 
+
+The material preset system uses an array of presets, where each preset can contain any number of material entries, allowing for rapid switching between different material setups. Each entry consists of a slot name and a material. This is especially useful when switching between static meshes with different slot orders—using slot names instead of raw indices ensures materials are applied correctly. Slot names also enable custom material behavior for pipes, such as overriding specific corners, junctions, or support meshes, while still preserving default behavior where needed.
+
+To change a specific mesh and assign a custom material, follow the steps below.
+
+{{% steps %}}
+
+#### Change Slot Name
+Open the static mesh editor for the desired mesh, go to the `Details` tab, select the target material, and change the default slot name (e.g., to `Pipe_Corner`).
+![Static mesh material slot name](Pipe_SlotName.png)
+
+#### Add Entry to Preset
+Open the Pipe data asset where the mesh is located. Navigate to Material Presets, press the **+** button on an existing preset or create a new one. Enter your custom slot name and assign a custom material. To replicate default plugin behavior, simply use the same material as the default.
+![Material preset entries](Pipe_CornerSlot.png)
+
+{{% /steps %}}
+
+This system allows you to override any mesh in the plugin—each preset can contain any number of entries while still supporting the single-material default behavior.
+
 
 ---
 
