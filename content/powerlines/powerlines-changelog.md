@@ -5,6 +5,13 @@ weight: 10
 prev: /powerlines
 ---
 
+## Version 1.31
+
+### **Fixed**
+* Fixed a crash that occurred when creating static cables.
+
+---
+
 ## Version 1.3
 
 ### **Added**
