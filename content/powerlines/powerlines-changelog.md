@@ -8,7 +8,7 @@ prev: /powerlines
 ## Version 1.32
 
 **Fixed**
-* Fixed `Get Socket Transform At Index` returning incorrect results for Static Meshes.
+* Fixed `Get Socket Transform At Index` blueprint function returning incorrect results for Static Meshes.
 
 ---
 
