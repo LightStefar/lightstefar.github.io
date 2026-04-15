@@ -8,11 +8,10 @@ prev: /skeletaldecals
 
 ## Version 1.01
 
-### **Fixed**
+**Fixed**
 * Fixed a potential nullptr reference in server builds.
 
 ---
-
 
 ## Version 1.0
 
