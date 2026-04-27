@@ -30,6 +30,20 @@ width: full
     doc_icon="book-open" 
     prod_link="https://fab.com/s/eb887b3cedca"
 >}}
+  {{< widget-product
+    image="images/WorldTrails.png"
+    doc_link="worldtrails" 
+    doc_text="Documentation"
+    doc_icon="book-open" 
+    prod_link="https://fab.com/s/eb887b3cedca"
+>}}
+  {{< widget-product
+    image="images/DistantLights.png"
+    doc_link="distantlights" 
+    doc_text="Documentation"
+    doc_icon="book-open" 
+    prod_link="https://fab.com/s/eb887b3cedca"
+>}}
 
 {{< /product-grid >}}
 

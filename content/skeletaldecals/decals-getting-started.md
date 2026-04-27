@@ -63,7 +63,7 @@ Select `MF_SkeletalDecals` and add it to the material graph, as shown below.
 
 {{< callout type="info" >}}
 If the material doesn't have the same pins as shown above, it needs material attributes enabled. To enable them, check **Use Material Attributes** in the Details panel.
-![Use material attributes](/skeletaldecals/MaterialAttributes.png)
+![Use material attributes](/images/MaterialAttributes.png)
 
 Update your material setup to support material attributes, as shown below.
 ![Material attributes setup](/skeletaldecals/MakeAttributes.png)

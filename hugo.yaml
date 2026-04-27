@@ -51,11 +51,16 @@ menu:
       pageRef: /skeletaldecals
       parent: plugins
       weight: 3
-    # - identifier: fencetool
-    #   name: Fence Tool
-    #   pageRef: /fencetool
-    #   parent: plugins
-    #   weight: 4 
+    - identifier: worldtrails
+      name: World Trails
+      pageRef: /worldtrails
+      parent: plugins
+      weight: 4 
+    - identifier: distantlights
+      name: Distant Lights
+      pageRef: /distantlights
+      parent: plugins
+      weight: 5
     
     - identifier: fogarea
       name: Fog Area
