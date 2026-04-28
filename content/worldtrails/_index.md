@@ -9,7 +9,7 @@ toc: false
 
 {{< space 2 >}}
 
-{{< prod-button link="https://fab.com/s/eb887b3cedca" >}}
+{{< prod-button link="https://fab.com/s/d579845d48d7" >}}
 
 
 World Trails is an Unreal Engine plugin that builds, draws, and manages dynamic trails. Its world subsystem makes it easy to manage and push data directly in Blueprint. Trails Manager handles drawing, origin actor tracking, and lifecycle of trails. For rendering, the plugin draws texture brushes as quads directly to a render target, supporting both Translucent and Additive blend modes.

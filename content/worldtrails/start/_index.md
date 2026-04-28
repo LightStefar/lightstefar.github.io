@@ -19,7 +19,7 @@ Download the plugin from the **Fab** tab in the Epic Games Launcher.
 Click **Install to engine** and select your installed Unreal Engine version.
 
 #### Open Plugins Window
-Open your project, go to **Edit → Plugins**, and find the Fast Powerlines plugin window.
+Open your project, go to **Edit → Plugins**, and find the World Trails plugin window.
 
 {{< callout type="info" >}}
 Type `trail` in search bar.

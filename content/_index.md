@@ -35,7 +35,7 @@ width: full
     doc_link="worldtrails" 
     doc_text="Documentation"
     doc_icon="book-open" 
-    prod_link="https://fab.com/s/eb887b3cedca"
+    prod_link="https://fab.com/s/d579845d48d7"
 >}}
   {{< widget-product
     image="images/DistantLights.png"
