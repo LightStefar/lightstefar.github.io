@@ -9,7 +9,7 @@ toc: false
 
 {{< space 2 >}}
 
-{{< prod-button link="https://fab.com/s/d579845d48d7" >}}
+{{< prod-button link="https://fab.com/s/5c8e3dabe135" >}}
 
 
 Distant Lights is an Unreal Engine plugin that creates proxy lights to dramatically increase light draw distance and optimize dynamic shadow distance. Its world subsystem allows managers to act as world lighting managers, blending all distant and actual light intensities quickly and efficiently. Supports Point and Spot lights.

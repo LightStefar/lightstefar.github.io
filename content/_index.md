@@ -42,7 +42,7 @@ width: full
     doc_link="distantlights" 
     doc_text="Documentation"
     doc_icon="book-open" 
-    prod_link="https://fab.com/s/eb887b3cedca"
+    prod_link="https://fab.com/s/5c8e3dabe135"
 >}}
 
 {{< /product-grid >}}
@@ -67,12 +67,12 @@ width: full
     image="images/BulletDecals.png"
     prod_link="https://fab.com/s/ec3059b723bc"
 >}}
- <!--  {{< widget-product
-    image="images/Fog.png"
+{{< widget-product
+    image="images/Clouds.png"
     doc_link="fastclouds" 
     doc_text="Documentation"
     doc_icon="book-open" 
     prod_link="https://fab.com/s/64922c047d6c"
->}} -->
+>}}
 {{< /product-grid >}}
 
