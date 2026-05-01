@@ -27,7 +27,7 @@ Type `lights` in search bar.
 
 #### Enable the Plugin
 Enable the plugin by checking its box as shown below.
-![Enable plugin](/distantlights/Lights_EnablePlugin.png)
+![Enable plugin](Lights_EnablePlugin.png)
 {{% /steps %}}
 
 ## Quickstart
