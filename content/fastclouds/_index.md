@@ -5,13 +5,218 @@ sidebar:
   hide: true
 
 resources:
-  - src: "Complexity/Shaders_1.png"
+  - src: "Comparision/Comparision_1.png"
     params:
-      caption: "Base noise only" 
-  - src: "Complexity/Shaders_2.png"
+      caption: "Fast clouds, cloudy preset and shadows" 
+  - src: "Comparision/Comparision_2.png"
     params:
-      caption: "Every feature is enabled" 
+      caption: "Default in Unreal" 
+
+  - src: "Wind/Wind_1.png"
+    params:
+      caption: "Volumetric clouds material" 
+  - src: "Wind/Wind_2.png"
+    params:
+      caption: "Cloud shadows light function" 
 ---
 
 
-### Under Construction 
+{{< space 2 >}}
+
+{{< video src="Clouds_Loop.mp4" muted="true" autoplay="true" loop="true" >}}
+
+{{< space 2 >}}
+
+{{< prod-button link="https://fab.com/s/64922c047d6c" >}}
+
+
+Fast Clouds is a data-driven, multi-layered, cloud profiles driven volumetric clouds shader.  It comes with multiple presets and the ability to create your own. Includes proxy cloud shadows based on a directional light function. Each cloud profile is customizble and drived by curves. The package includes pre-baked volume noise textures for optimized runtime performance. 
+
+**Presets included:** 
+* Cloudy 
+* Partly 
+* Wispy 
+* Fluffy
+* Overcast Dark 
+* Overcast Light
+* Storm
+* Stylized
+* Stylized 2
+
+## Quickstart
+
+{{% steps %}}
+
+#### Place Fast Clouds
+
+To see Fast Clouds in action right away, drag the **Fast Clouds** Blueprint actor from the **Content Browser** or the **Place Actors** tab into your scene.
+
+![Place Fast Clouds in Level](Clouds_DragDrop.webp)
+
+#### Connect Volumetric Clouds 
+
+Scroll down in the Fast Clouds actor, find the **Volumetric Clouds** variable, and select the Volumetric Clouds Actor from your scene.
+![Connect Volumetric Clouds Actor](Clouds_Reference.png)
+
+#### (Optional) Connect Sky Atmosphere & Directional Light
+
+Optionally, you can connect a **Sky Atmosphere** to Fast Clouds, which will change some parameters based on the cloud preset. A reference to the **Directional Light** is necessary for proxy cloud shadows to work. 
+
+#### (Optional) Change Preset 
+
+You can select from number of pre-built presets.
+
+{{< space 2 >}}
+
+{{< video src="Clouds_Preset.mp4" muted="true" autoplay="true" loop="true" >}}
+
+{{% /steps %}}
+
+## General
+
+The Fast Clouds actor features two separate modes: `Custom` and `Preset`. Both modes serve the same purpose but are split to offer flexibility in workflow.
+
+- **Custom Mode** allows you to create a cloud preset from scratch directly within the actor.
+- **Preset Mode** uses a data asset containing the same parameters, enabling you to quickly switch between different visual presets.
+
+
+{{< callout >}}
+To speed up the creation of a new preset, you can copy struct parameters more quickly.  Right-click the struct parameter (or use the shortcut `Shift+RMB`) to copy the entire struct. Then use `Shift+LMB` to paste the data into a cloud preset.
+![Copy struct hack](Clouds_CopyHack.png)
+{{< /callout >}}
+
+### Performance Comparison
+
+Below is a comparison between the default Fast Clouds preset (with extra cloud shadows) and Unreal's native clouds material. The performance of Unreal's clouds material heavily depends on coverage, but generally Fast Clouds is more performant compared to the native material.
+
+{{< slider folder="Comparision" >}}
+
+### Wind Direction
+
+**Wind Direction** is a local Fast Clouds parameter. If you want to use your own global wind, there are two strategies:
+
+1. Set wind direction before the Fast Clouds main function in the Construction Script.
+2. Use a **Material Parameter Collection**.
+
+Connect your global wind to the **Wind Direction** input pin in the Volumetric Clouds material and the Cloud Shadows light function material, then recompile both.
+
+{{< slider folder="Wind" >}}
+
+---
+
+### Main Parameters
+
+| Variable | Default Value | Description |
+|----------|---------------|-------------|
+| **Profile Row** | 0 | The index or row of the cloud profile. |
+| **Density** | 1.0 | General cloud density. |
+| **Wind Speed** | 0.5 | Wind speed value. |
+| **MultiScatter** | 0.8, 0.5, 0.3 | Multi-scattering values. |
+| **Phase** | 0.5, -0.5, 0.25 | Phase function values. |
+| **Albedo Color** | White | Clouds albedo color. |
+| **Emissive Color** | Black | Emissive color setting. |
+
+---
+
+#### Map 
+
+The **Map** is a base 2D layer responsible for the overall cloud shape. It is also important for optimization, as Unreal relies on conservative density and empty space skipping. This 2D layer allows for significantly accelerated ray marching.
+
+**Sharpness** and **Intensity** are the most valuable parameters here, allowing you to build multi-layered clouds. Keep in mind that each layer, even with low intensity, still adds some overhead. We suggest using 1–2 layers at most and experimenting with the sharpness value.
+
+| Variable | Default Value | Description |
+|----------|---------------|-------------|
+| **Scale** | 120.0 | Map base scale (in kilometers). |
+| **Speed** | 0.4 | Map base speed. |
+| **Density** | 1.0 | Map base density. |
+| **Texture** | None | Overridable base map texture. |
+
+---
+
+#### Base Noise
+
+Base noise and detail noise share the same structure and act similarly, but each adds another layer of granularity.
+
+| Variable | Default Value | Description |
+|----------|---------------|-------------|
+| **Scale** | 14.0 | Base noise scale. |
+| **Speed** | 40.0 | Base noise speed. |
+| **Sharpness** | 0.25 | Base noise sharpness. |
+| **Intensity** | 1.0 | Base noise intensity. |
+
+---
+
+#### Detail Noise
+
+| Variable | Default Value | Description |
+|----------|---------------|-------------|
+| **Scale** | 14.0 | Detail noise scale. |
+| **Speed** | 40.0 | Detail noise speed. |
+| **Sharpness** | 0.25 | Detail noise sharpness. |
+| **Intensity** | 1.0 | Detail noise intensity. |
+| **Altitude Offset** | 0.0 | Offsets noise by normalized height in layer. |
+| **Altitude Intensity** | 1.0 | Scales the altitude detail mask. |
+
+---
+
+#### Distortion
+
+Distortion affects the base noise and allows for stylized clouds. It is not enabled in the default cloud material and can be quite expensive.
+
+| Variable | Default Value | Description |
+|----------|---------------|-------------|
+| **Scale** | — | Distortion scale (in kilometers). |
+| **Intensity** | — | Distortion intensity. |
+
+---
+
+### Cloud Shadows
+
+Cloud shadows are built from the directional light (if referenced) and are a cheap approximation of volumetric clouds. 
+
+| Variable | Default Value | Description |
+|----------|---------------|-------------|
+| **Enable Shadows** | false | Enables the proxy cloud shadows |
+| **Cloud Shadows Intensity** | 1.0 | Simple multiplier for shadow intensity. |
+| **Cloud Shadows Exponent** | 2.0 | Scales shadow strength using an exponent. |
+
+---
+
+## Cloud Profiles
+
+Cloud profiles allow you to control the shape of each cloud layer.
+
+To create a custom cloud profile, follow the steps below:
+
+{{% steps %}}
+
+#### Navigate to Curve Creation
+In the **Content Browser**, navigate to **Miscellaneous → Curve**, as shown below.
+![Create new curve](Clouds_FindCurve.png)
+
+#### Select Curve Class
+
+Select a `Linear Curve` in the new editor window.
+![Select Linear curve](Clouds_SelectLinear.png)
+
+#### Modify Curve
+
+The curve should be in the 0–1 range on both axes. Only XYZ or RGB curves are valid; Alpha is not used.
+![Modify curves](Clouds_CurveModify.png)
+
+#### Navigate to Curve Atlas
+
+In the **Content Browser**, navigate to the `Data` folder and find `CC_CloudProfiles`.
+
+#### Add Curve to Atlas
+
+In the curve atlas windows, find Texture Height parameter and increase value by 1, it will create additional slot for atlas.
+Press plus button in Gradient Curves and assign your custom cloud profile.
+![Assign custom profile](Clouds_CurveAtlas.png)
+
+{{% /steps %}}
+
+
+
+
+
