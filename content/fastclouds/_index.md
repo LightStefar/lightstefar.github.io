@@ -120,14 +120,16 @@ Connect your global wind to the **Wind Direction** input pin in the Volumetric C
 
 #### Map 
 
-The **Map** is a base 2D layer responsible for the overall cloud shape. It is also important for optimization, as Unreal relies on conservative density and empty space skipping. This 2D layer allows for significantly accelerated ray marching.
+The Map serves as the foundational 2D layer that defines the overall cloud silhouette. It is also critical for optimization: Unreal Engine leverages conservative density estimation and empty-space skipping, and this 2D layer significantly accelerates ray marching.
 
-**Sharpness** and **Intensity** are the most valuable parameters here, allowing you to build multi-layered clouds. Keep in mind that each layer, even with low intensity, still adds some overhead. We suggest using 1–2 layers at most and experimenting with the sharpness value.
+The most impactful parameters are `Sharpness` and `Intensity`, which enable the construction of multi-layered clouds. Note that each layer—even with low intensity—adds some performance cost. I recommend using at most 1–2 layers and experimenting with the Sharpness value.
+
+Each vector channel corresponds to a cloud layer, which is mapped to a curve float value to shape the cloud at a specific height.
 
 | Variable | Default Value | Description |
 |----------|---------------|-------------|
 | **Scale** | 120.0 | Map base scale (in kilometers). |
-| **Speed** | 0.4 | Map base speed. |
+| **Speed** | 0.5 | Map base speed. |
 | **Density** | 1.0 | Map base density. |
 | **Texture** | None | Overridable base map texture. |
 

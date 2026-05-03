@@ -22,6 +22,11 @@ Only inverse squared falloff is supported for lights. Simple falloff is technica
 
 The manager supports two light types: **Post Process Lights** and **Mesh Lights**. Each has its own pros and cons. Mesh Lights are further split into two subtypes: Mesh and Sprite. The manager can change light types during gameplay.
 
+{{< callout type="info" >}}
+If the manager only contains mesh or sprite light types during Editor construction, it will skip render target and post-process material creation at Begin Play, thereby saving memory and reducing overhead. In this mode, only mesh lights are allowed inside its box. If you need to spawn a light at runtime, change its light type to mesh or sprite after creation to properly build a distant light.
+{{< /callout >}}
+
+
 #### Texture (Post Process, Default)
 
 Draws necessary light data to render targets and uses a unique post process material per manager as a cheap distant light.
