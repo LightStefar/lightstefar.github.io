@@ -30,7 +30,7 @@ resources:
 {{< prod-button link="https://fab.com/s/be4f41af19ab" >}}
 
 
-Fast Clouds is a data-driven, multi-layered, cloud profiles driven volumetric clouds shader.  It comes with multiple presets and the ability to create your own. Includes proxy cloud shadows based on a directional light function. Each cloud profile is customizble and drived by curves. The package includes pre-baked volume noise textures for optimized runtime performance. 
+Fast Clouds is a component based data-driven, multi-layered, cloud profiles driven volumetric clouds shader.  It comes with multiple presets and the ability to create your own. Includes proxy cloud shadows based on a directional light function. Each cloud profile is customizble and drived by curves. The package includes pre-baked volume noise textures for optimized runtime performance. 
 
 **Presets included:** 
 * Cloudy 
@@ -44,6 +44,10 @@ Fast Clouds is a data-driven, multi-layered, cloud profiles driven volumetric cl
 * Stylized 2
 
 ## Quickstart
+
+There are two ways to get started: place the Fast Clouds actor directly in a level, or use it with your own custom sky actor.
+
+### Actor-Based Approach
 
 {{% steps %}}
 
@@ -72,24 +76,44 @@ You can select from number of pre-built presets.
 
 {{% /steps %}}
 
+---
+
+### Component-Based Approach
+
+{{% steps %}}
+
+#### Add Component 
+
+Navigate to your custom Sky actor, press the Add button at top-left windon, and find `AC_FastClouds` actor component.
+![Add component](Clouds_Component.png)
+
+#### Initialize Component
+
+In the Construction Script or Begin Play, add the nodes in the order shown below. Component references should be first for correct behavior.
+![Component construction setup](Clouds_Setup.png)
+
+{{% /steps %}}
+
+
+---
+
 ## General
 
-The Fast Clouds actor features two separate modes: `Custom` and `Preset`. Both modes serve the same purpose but are split to offer flexibility in workflow.
+The Fast Clouds actor is a wrapper around the `AC_FastClouds` actor component. The actor can be placed directly in a level or serve as a container for creating a custom cloud preset.
 
-- **Custom Mode** allows you to create a cloud preset from scratch directly within the actor.
-- **Preset Mode** uses a data asset containing the same parameters, enabling you to quickly switch between different visual presets.
+`AC_FastClouds` is an actor component designed for easy integration into a custom sky actor. The component uses a **Preset‑only** approach — it relies on data assets and does not support custom creation.
 
+The actor wrapper, however, features two separate modes: **Custom** and **Preset**. Both modes serve the same purpose but are split to offer flexibility in workflow.
+
+- **Custom Mode** — Available only in the actor. Allows you to create a cloud preset from scratch directly within the actor.
+- **Preset Mode** — Available in both the actor and the component. Uses a data asset containing the same parameters, enabling you to quickly switch between different visual presets.
 
 {{< callout >}}
 To speed up the creation of a new preset, you can copy struct parameters more quickly.  Right-click the struct parameter (or use the shortcut `Shift+RMB`) to copy the entire struct. Then use `Shift+LMB` to paste the data into a cloud preset.
 ![Copy struct hack](Clouds_CopyHack.png)
 {{< /callout >}}
 
-### Performance Comparison
-
-Below is a comparison between the default Fast Clouds preset (with extra cloud shadows) and Unreal's native clouds material. The performance of Unreal's clouds material heavily depends on coverage, but generally Fast Clouds is more performant compared to the native material.
-
-{{< slider folder="Comparision" >}}
+---
 
 ### Wind Direction
 
@@ -181,6 +205,14 @@ Cloud shadows are built from the directional light (if referenced) and are a che
 | **Enable Shadows** | false | Enables the proxy cloud shadows |
 | **Cloud Shadows Intensity** | 1.0 | Simple multiplier for shadow intensity. |
 | **Cloud Shadows Exponent** | 2.0 | Scales shadow strength using an exponent. |
+
+---
+
+### Performance Comparison
+
+Below is a comparison between the default Fast Clouds preset (with extra cloud shadows) and Unreal's native clouds material. The performance of Unreal's clouds material heavily depends on coverage, but generally Fast Clouds is more performant compared to the native material.
+
+{{< slider folder="Comparision" >}}
 
 ---
 
