@@ -5,6 +5,19 @@ weight: 10
 prev: /skeletaldecals
 ---
 
+## Version 1.03
+
+**Added**
+* Added an Unreal Engine 5.4 version of the plugin.  
+
+**Changed**
+* Made private Blueprint functions public and accessible in C++.
+  
+**Fixed**
+* Fixed a small, non critical bug. 
+
+---
+
 
 ## Version 1.01
 
