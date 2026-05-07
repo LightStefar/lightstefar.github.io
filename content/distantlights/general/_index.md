@@ -81,7 +81,7 @@ To counter occlusion culling issues, the manager has a **Sprite Enlargement** pa
 
 ### General Parameters
 
-The **Lights Specular** parameter is not used by default, but it is available if you want to enable specular highlights in distant lights. To enable specular, override the default materials in the manager by creating material instances and enabling `Use Specular` in the parameters.
+The `Lights Specular` parameter is enabled by default, adding simplified specular highlights to distant lights — similar to Unreal's native implementation. To disable specular, create material instances that override the default materials in the manager, then turn off `Use Specular` in the parameters.
 
 | Variable | Default | Description |
 |:--|:--|:--|
