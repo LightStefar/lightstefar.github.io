@@ -16,6 +16,7 @@ prev: /distantlights
 
 **Changed**
 * Shortened the distance at which mesh lights and flares collapse vertices, improved performance a bit.
+* Switched from Blinn-Phong to approximate GGX specular: cheaper and more native-looking.
 * Specular highlights are enabled by default.
 * Default Specular value is now 1 and clamped to 1 (matching Unreal).
   
