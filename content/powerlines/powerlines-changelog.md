@@ -5,6 +5,13 @@ weight: 10
 prev: /powerlines
 ---
 
+## Version 1.33
+
+**Changed**
+* Changed the X (U) direction of generated cable UVs from downward to `upward`, as this is the most common case for most textures.
+
+---
+
 ## Version 1.32
 
 **Fixed**
