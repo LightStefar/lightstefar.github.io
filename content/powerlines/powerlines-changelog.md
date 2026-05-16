@@ -5,6 +5,13 @@ weight: 10
 prev: /powerlines
 ---
 
+## Version 1.34
+
+**Fixed**
+* Fixed flipped Y normals caused by a previous update.
+
+---
+
 ## Version 1.33
 
 **Changed**
