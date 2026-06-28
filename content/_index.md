@@ -44,6 +44,13 @@ width: full
     doc_icon="book-open" 
     prod_link="https://fab.com/s/5c8e3dabe135"
 >}}
+  <!-- {{< widget-product
+    image="images/DistantLights.png"
+    doc_link="roads" 
+    doc_text="Documentation"
+    doc_icon="book-open" 
+    prod_link="https://fab.com/s/5c8e3dabe135"
+>}} -->
 
 {{< /product-grid >}}
 

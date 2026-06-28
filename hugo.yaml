@@ -61,6 +61,11 @@ menu:
       pageRef: /distantlights
       parent: plugins
       weight: 5
+    # - identifier: roads
+    #   name: Road Builder
+    #   pageRef: /roads
+    #   parent: plugins
+    #   weight: 6
     
     - identifier: fogarea
       name: Fog Area

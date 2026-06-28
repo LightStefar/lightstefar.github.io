@@ -88,23 +88,42 @@ The `Lights Specular` parameter is enabled by default, adding simplified specula
 | **Manager Index** | 0 | Unique index of the manager. |
 | **Map Size** | 2.0, 2.0, 0.2 | Controls the size of the Box Component and world size. Affects render target resolution. Size is in **kilometers**. |
 | **Base Lights Intensity** | 1.0 | Base intensity multiplier for all distant lights. |
-| **Post Process Material** | PP_DistantLights | Post process material used for texture lights. |
-| **Render Target Scale** | 1.0 | Scale factor for render target resolution. |
-| **Mesh Material** | M_DistantLight | Material used for mesh lights. |
-| **Sprite Material** | M_DistantLight_Sprite | Material used for sprite lights. |
-| **Sprite Enlargement** | 1.0 | Scales the instance size to counter occlusion culling. Does not change the actual visual size of the sprite. |
 | **Flares Material** | M_DistantLight_Flare | Default material used for flares, if not overridden in the Distant Light component. |
+
+The `Run On Construction` parameter prevents automatic light generation during editor construction and `BeginPlay`. When enabled, you are responsible for calling `Build Lights` at the appropriate time to ensure distant lights are visible.
 
 ---
 
-### Advanced Parameters
+### Mesh/Sprite Parameters
+
+| Variable | Default | Description |
+|:--|:--|:--|
+| **Fog Intensity** | 1.0 | Changes the intensity of fog for all mesh/sprite distant lights. |
+| **Mesh Material** | M_DistantLight | Material used for mesh lights. |
+| **Cull Distances** | 0.0 | Defines the start and end cull distances for instanced meshes. Set to 0 to disable. |
+| **Sprite Material** | M_DistantLight_Sprite | Material used for sprite lights. |
+| **Sprite Enlargement** | 1.0 | Scales the instance size to counter occlusion culling. Does not change the actual visual size of the sprite. |
+
+---
+
+### Post Process Parameters 
+
+| Variable | Default | Description |
+|:--|:--|:--|
+| **Allow Texture Lights** | true | Enables texture light registration — creates a dynamic post-process material and allocates render targets. Disable to save memory when using only mesh or sprite lights.  |
+| **Post Process Material** | PP_DistantLights | Post process material used for texture lights. |
+| **Render Target Scale** | 1.0 | Scale factor for render target resolution. |
+| **Post Process Priority** | 10 | Base priority order for the post process material. The final index is calculated based on the number of managers in the level. |
+| **Texture Data** | None | Render target textures. For debugging purposes. |
+
+---
+
+### Material Collection Paramets 
 
 | Variable | Default | Description |
 |:--|:--|:--|
 | **Material Collection** | None | Optional material parameter collection. Useful for emissive materials with light components, allowing light intensity to blend into them as well. |
 | **Intensity Param Name** | None | Parameter name in the MPC used for intensity control. |
-| **Post Process Priority** | 10 | Base priority order for the post process material. The final index is calculated based on the number of managers in the level. |
-| **Texture Data** | None | Render target textures. For debugging purposes. |
 
 ----
 
@@ -188,6 +207,8 @@ Light component destruction, movement, and visibility are auto-tracked by the ma
 {{< callout type="important" >}}
 The EV light unit type can sometimes become negative in the Editor when changing light unit types. Additionally, blending results may be incorrect when using EV units. Therefore, Distant Light Actors force **Candelas** instead of EV. (No idea how a light can have a negative value.)
 {{< /callout >}}
+
+
 
 ### Component Functions
 
