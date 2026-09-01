@@ -5,6 +5,14 @@ weight: 10
 prev: /pipes
 ---
 
+<!-- ## Version 1.12
+
+
+**Changed**
+* Cleaned up and simplified internal C++ code. 
+
+--- -->
+
 ## Version 1.1
 
 **Added**

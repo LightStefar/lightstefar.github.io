@@ -45,7 +45,7 @@ width: full
     prod_link="https://fab.com/s/5c8e3dabe135"
 >}}
   <!-- {{< widget-product
-    image="images/DistantLights.png"
+    image="images/RoadBuilder.png"
     doc_link="roads" 
     doc_text="Documentation"
     doc_icon="book-open" 
@@ -81,5 +81,13 @@ width: full
     doc_icon="book-open" 
     prod_link="https://fab.com/s/be4f41af19ab"
 >}}
+<!-- {{< widget-product
+    image="images/RoadProps.png"
+    prod_link="https://fab.com/s/ec3059b723bc"
+>}} -->
+<!-- {{< widget-product
+    image="images/RoadUtilities.png"
+    prod_link="https://fab.com/s/ec3059b723bc"
+>}} -->
 {{< /product-grid >}}
 

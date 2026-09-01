@@ -13,6 +13,13 @@ resources:
   - src: "MaterialParams/Material_2.png"
     params:
       caption: "Sphere decals" 
+
+  - src: "ShadingLayer/Shading_1.png"
+    params:
+      caption: "Shading material function" 
+  - src: "ShadingLayer/Shading_2.png"
+    params:
+      caption: "Shading blend" 
 ---
 
 
@@ -71,10 +78,48 @@ The material function is split into logical, modular building blocks. Several pa
 
 {{< slider folder="MaterialParams" >}}
 
-{{< callout type="info" >}}
-If you wish to override the default appearance of the material layer, it is recommended to copy or directly edit the logic inside the `MF_SkeletalDecals_Shading` function. The image below shows an example of a custom material layer.
-![Shading material function](MaterialLayer.png)
+---
+
+## Decal Customization
+
+The plugin supports customizable decal textures and offers multiple ways to achieve this.
+
+**Material Instance Parameters** </br>
+The simplest method is to tweak the built-in parameters in the character material instance, as shown below.
+![Tweak material instance parameters](TweakInstance.png)
+
+</br>
+
+**Shading Function Override** </br>
+You can tweak `MF_SkeletalDecals_Shading` or overwrite it completely. This shading function acts as a simple material layer that can dramatically change the appearance of decals. In most cases, this is the best place to build a custom look. However, changes affect all decals and both modes (projected and sphere).
+
+{{< slider folder="ShadingLayer" >}}
+
+---
+
+### Projected Decals
+
+The simplest way to change the appearance of projected decals is to replace the default Base Color and Normal atlas textures. You can also use single textures, but for variation it's **recommended**  to pack decal textures into a sprite sheet (e.g., 2x2, 3x3, 4x2 tiles, etc.).
+![Change Base Color and Normals](AtlasTextures.png)
+
+For the Skeletal Decals component to function correctly and pass the right data to the material, the `Sub UV Frames` parameter must be set to the correct number of atlas frames or tiles *(default is 2x2)*.
+![Set Sub UV Frames in component](SetFramesCount.png)
+
+{{< callout type="important" >}}
+Currently, there is no easy way to sample additional atlas textures without writing custom `HLSL` code. If you need to use additional textures or modify the default Base Color/Normal layout, feel free to reach out — I'll guide you through it. [📩 Email](mailto:lightstefar@gmail.com)
 {{< /callout >}}
+
+---
+
+### Sphere Decals
+
+Sphere decals are simple spheres with tiling textures. They are more customizable and do not require HLSL knowledge to achieve a completely different look.
+
+By default, sphere decals use 2 tiling textures for simplicity and good performance, but additional textures (e.g., Roughness, Metalness) can be added easily. To change the default tiling textures, navigate to your material instance and modify them as shown below.
+![Change tiling textures](SphereTextures.png)
+
+To add additional textures, open `MF_SkeletalDecals_Sphere` and add your custom textures. From there, you have two options: add new pins to `MF_SkeletalDecals_Shading`, or bypass that function entirely and create a custom material layer inside the material function, as shown below.
+![Build custom material layer in Sphere mode](AdditionalTexturesSphere.png)
 
 ---
 
