@@ -13,7 +13,7 @@ prev: /fastclouds
 * `Wind Offset`, `bEnableBlending`, and temporary data assets used as temporary variables for blending.
 * An additional temporary data asset for blending, located in the `Presets` folder.
 * A blending example inside the Fast Clouds actor.
-* The new function is shown below.
+* New functions are shown below.
 ![New functions in 1.2 version](Clouds_Update1.2_Func.png)
 
 **Changed**
