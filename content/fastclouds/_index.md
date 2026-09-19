@@ -1,8 +1,9 @@
 ---
 title: Fast Clouds
+type: docs
 toc: true
-sidebar:
-  hide: true
+next: clouds-changelog
+
 
 resources:
   - src: "Comparision/Comparision_1.png"
@@ -18,8 +19,8 @@ resources:
   - src: "Wind/Wind_2.png"
     params:
       caption: "Cloud shadows light function" 
----
 
+---
 
 {{< space 2 >}}
 
@@ -27,7 +28,8 @@ resources:
 
 {{< space 2 >}}
 
-{{< prod-button link="https://fab.com/s/be4f41af19ab" >}}
+{{< prod-button link="https://fab.com/s/be4f41af19ab" >}} 
+
 
 
 Fast Clouds is a component based data-driven, multi-layered, cloud profiles driven volumetric clouds shader.  It comes with multiple presets and the ability to create your own. Includes proxy cloud shadows based on a directional light function. Each cloud profile is customizble and drived by curves. The package includes pre-baked volume noise textures for optimized runtime performance. 
@@ -99,9 +101,9 @@ In the Construction Script or Begin Play, add the nodes in the order shown below
 
 ## General
 
-The Fast Clouds actor is a wrapper around the `AC_FastClouds` actor component. The actor can be placed directly in a level or serve as a container for creating a custom cloud preset.
+The Fast Clouds actor is a wrapper around the `AC_FastClouds` actor component. The actor can be placed directly in a level or serve as a container for creating a custom cloud presets.
 
-`AC_FastClouds` is an actor component designed for easy integration into a custom sky actor. The component uses a **Preset‑only** approach — it relies on data assets and does not support custom creation.
+`AC_FastClouds` is an actor component designed for easy integration into a custom sky actor. The component uses a **Preset‑only** approach — it relies on data assets and does not support custom clouds creation.
 
 The actor wrapper, however, features two separate modes: **Custom** and **Preset**. Both modes serve the same purpose but are split to offer flexibility in workflow.
 
@@ -125,6 +127,10 @@ To speed up the creation of a new preset, you can copy struct parameters more qu
 Connect your global wind to the **Wind Direction** input pin in the Volumetric Clouds material and the Cloud Shadows light function material, then recompile both.
 
 {{< slider folder="Wind" >}}
+
+{{< callout type="important" >}}
+When dynamic blend is enabled, wind direction can't be used. In that case, an additional `Wind Offset` parameter drives the animation, and the wind direction in the material is ignored.
+{{< /callout >}}
 
 ---
 
@@ -196,7 +202,7 @@ Distortion affects the base noise and allows for stylized clouds. It is not enab
 
 ---
 
-### Cloud Shadows
+## Cloud Shadows
 
 Cloud shadows are built from the directional light (if referenced) and are a cheap approximation of volumetric clouds. 
 
@@ -208,7 +214,7 @@ Cloud shadows are built from the directional light (if referenced) and are a che
 
 ---
 
-### Performance Comparison
+## Performance Comparison
 
 Below is a comparison between the default Fast Clouds preset (with extra cloud shadows) and Unreal's native clouds material. The performance of Unreal's clouds material heavily depends on coverage, but generally Fast Clouds is more performant compared to the native material.
 
@@ -249,6 +255,25 @@ Press plus button in Gradient Curves and assign your custom cloud profile.
 ![Assign custom profile](Clouds_CurveAtlas.png)
 
 {{% /steps %}}
+
+---
+
+## Presets Blend
+
+Fast Clouds supports blending presets at runtime.
+
+Dynamic blending adds an extra texture sample of `Cloud Profiles` and is slightly heavier than the original clouds without blending. It is enabled by default in the `M_VolumetricClouds` material. If your project only needs the static version, you can disable it by creating a material instance and turning off dynamic blend, as shown below.
+
+![Disable blend in material](Clouds_DynamicBlendMat.png)
+
+**To blend presets at runtime:**
+
+1. Call `EnableBlending` at Begin Play or before the first blend.
+2. Call `Set New Preset Data` before each blend to define the target preset.
+3. Call `Blend New Preset` — the main function that blends two presets together. It takes a float parameter in the `0 to 1` range.
+4. Optionally call `Finish Blend` after the new preset is fully blended, so a future preset can be blended.
+
+Blending supports several scenarios, such as blending to a new preset each time or flip‑flopping (forward and reverse) between two presets. However, due to the architecture of Cloud Profiles, a new preset **cannot** be blended while a blend is already in progress.
 
 
 
