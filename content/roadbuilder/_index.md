@@ -32,6 +32,6 @@ Distant Lights is an Unreal Engine plugin that creates proxy lights to dramatica
 
 {{< cards >}}
   {{< card link="start" title="Getting Started" icon="academic-cap" subtitle="Guide" >}}
-  {{< card link="roads-changelog" title="Change Log" icon="document-text" subtitle="Log" >}}
+  {{< card link="roadbuilder-changelog" title="Change Log" icon="document-text" subtitle="Log" >}}
 {{< /cards >}}
 

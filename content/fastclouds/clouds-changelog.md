@@ -5,6 +5,13 @@ weight: 10
 prev: /fastclouds
 ---
 
+## Version 1.21
+
+**Fixed**
+* Fixed an issue where Directional Light ground shadows did not receive the dynamic wind offset when preset blending was enabled.
+
+---
+
 ## Version 1.2
 
 **Added**

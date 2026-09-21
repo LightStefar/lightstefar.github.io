@@ -2,8 +2,8 @@
 title: Getting Started
 type: docs
 weight: 1
-prev: roads
-next: roads/actor
+prev: roadbuilder
+next: roadbuilder/actor
 ---
 
 A quick guide to get started with the Powerlines plugin.

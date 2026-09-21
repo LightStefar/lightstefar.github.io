@@ -2,7 +2,7 @@
 title: Changelog
 type: docs
 weight: 10
-prev: /roads
+prev: /roadbuilder
 ---
 
 ## Version 1.0
