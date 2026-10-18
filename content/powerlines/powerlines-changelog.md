@@ -5,6 +5,26 @@ weight: 10
 prev: /powerlines
 ---
 
+## Version 1.35
+
+
+**Added**
+- `Enable Connections` boolean to toggle cable connection generation as a whole.
+
+**Changed**
+- Changed the Spline component and Procedural Mesh component category to Default.
+- Renamed the Static Cables function and added icons to function names.
+- Changed the Target Copy Actor reference from a hard pointer to a weak pointer.
+- Changed connected actor references from hard pointers to weak pointers.
+- Copied `bAllowDiscontinuousSpline` from the target actor's Spline component.
+- Added a Construction Script rerun when any Static Cables function is called, so the construction result is visible instantly.
+
+**Fixed**
+- An issue with serialization where connection cables weren't generated on map load.
+- An issue where `GetSocketTransform()` didn't return a transform with `RunOnConstruction` disabled.
+
+---
+
 ## Version 1.34
 
 **Fixed**

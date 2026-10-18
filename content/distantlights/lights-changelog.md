@@ -5,24 +5,37 @@ weight: 10
 prev: /distantlights
 ---
 
+<!-- ## Version 1.21
+
+**Changed**
+* Simplified light conversion internal data. 
+* Distant light box and and post process internal Default category   
+
+**Fixed** 
+* Crash related to Stored lights. 
+* Duplicate mesh lights generated dynamically in Blueprint. 
+* Blueprint created light components at runtime are properly registred now.  -->
+
+ 
+
 ## Version 1.2
 
 **Added**
 * `Try To Register` Blueprint function for spot and point light components. This allows you to manually register a light in cases where auto‑registration fails.
-- `Allow Texture Lights` variable to the Distant Lights Manager, enabling you to skip texture lights and save memory on post‑process and render target creation.
-- `Run On Construction` variable to allow manual light building in Blueprints — useful for fully dynamic scenarios with procedural generation.
+* `Allow Texture Lights` variable to the Distant Lights Manager, enabling you to skip texture lights and save memory on post‑process and render target creation.
+* `Run On Construction` variable to allow manual light building in Blueprints — useful for fully dynamic scenarios with procedural generation.
 * Start and end cull distances variable for mesh/sprite lights. Allows to cap max draw distance on instanced distant lights. 
 ![New blueprint nodes in 1.2](Lights_Func_1.2.png)
 
 
 **Fixed**
-- Fixed an issue where new dynamic lights were not properly registered at runtime in some situations.
-- Various small non‑critical fixes and cleanup.
+* Fixed an issue where new dynamic lights were not properly registered at runtime in some situations.
+* Various small non‑critical fixes and cleanup.
 
 **Changed**
-- Added separate categories for variables in the Distant Lights Manager.
-- Increased the size of the editor actor sprite in the Distant Lights Manager.
-- Updated the example project to the latest version of the plugin.
+* Added separate categories for variables in the Distant Lights Manager.
+* Increased the size of the editor actor sprite in the Distant Lights Manager.
+* Updated the example project to the latest version of the plugin.
 
 
 ---

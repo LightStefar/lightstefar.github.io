@@ -7,10 +7,18 @@ prev: /pipes
 
 <!-- ## Version 1.12
 
+**Added**
+* Icon to SpawnPipe function
+* Display name of SpawnPipe() function and made it more user friendly
 
 **Changed**
 * Cleaned up and simplified internal C++ code. 
+* Spline component's category to Default
+* Connection pipe buidler actor Hard Object reference to Weak Object reference 
+* Target copy actor reference to Weak reference
 
+**Fixed**
+* Forward declared Weak Object ptr of pipe connectoion
 --- -->
 
 ## Version 1.1

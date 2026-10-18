@@ -25,8 +25,8 @@ To mitigate this, we can bake all cables into a static mesh.
 | Feature | Description | Details / Notes |
 | :--- | :--- | :--- |
 | **Create Static Cables** | Bakes procedural cables into a static mesh, saves it, and reruns the construction script. | Primary tool for performance optimization. |
-| **Remove Reference** | Clears the reference to the merged static mesh from the actor and refreshes it. | Use this if you duplicated an actor that already had a baked mesh, to break the reference. |
 | **Remove Static Cables** | **Permanently deletes** the baked static mesh asset from disk | **Destructive action** – cannot be undone via **Edit > Undo**. Use with caution.  |
+| **Remove Reference** | Clears the reference to the merged static mesh from the actor and refreshes it. | Use this if you duplicated an actor that already had a baked mesh, to break the reference. |
 | **Path Name** | A configurable variable to set the default save folder for baked static meshes. | Default location: `/Game/Meshes/`. Example: `/Game/Meshes/Cables/`. |
 | **Merged Cable Mesh** | A private, read-only variable holding a reference to the generated static mesh. | Allows inspection via double-click; note that the mesh may appear with an unusual rotation. |
 
