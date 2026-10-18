@@ -5,18 +5,19 @@ weight: 10
 prev: /distantlights
 ---
 
-<!-- ## Version 1.21
+
+## Version 1.21
 
 **Changed**
-* Simplified light conversion internal data. 
-* Distant light box and and post process internal Default category   
+- Simplified internal data for light conversion.
+- Moved Distant Light Box and Post-Process to the Default category.
 
-**Fixed** 
-* Crash related to Stored lights. 
-* Duplicate mesh lights generated dynamically in Blueprint. 
-* Blueprint created light components at runtime are properly registred now.  -->
+**Fixed**
+- Crash related to the Stored Lights data asset.
+- Duplication of Blueprint-created mesh lights.
+- Blueprint-created light components at runtime are now properly registered.
 
- 
+ ---
 
 ## Version 1.2
 
